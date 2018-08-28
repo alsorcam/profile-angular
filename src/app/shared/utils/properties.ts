@@ -3,5 +3,5 @@ export class Properties {
     public static readonly LANGUAGES = [
         { code: 'en', largeCode: 'en-EN', name: 'English' }
     ];
-    public static readonly BACKEND_SERVICES_ENDPOINT = '/api/rest';
+    public static readonly BACKEND_SERVICES_ENDPOINT = '/api';
 }

@@ -1,4 +1,35 @@
 <div class="information-container">
-
-    
+    <div class="photo">
+        <img src="../../../../assets/img/profile-pic.png"/>
+    </div>
+    <div class="profile-info" *ngIf="user">
+        <div class="bold larger-text">{{user.position}}</div>
+        <div class="display-inline light-text">
+            <div class="user-years">
+                <fa-icon *ngIf="user.sex == 'F'" icon="venus"></fa-icon>
+                <fa-icon *ngIf="user.sex == 'M'" icon="mars"></fa-icon>
+                {{user.years}} {{'personal_information.years' | translate}}
+            </div>
+        </div>
+        <div class="bold">{{user.name}}</div>
+        <div class="light-text">{{user.address}}</div>
+        <div class="display-inline">
+            <fa-icon icon="phone" class="light-text"></fa-icon>
+            <div *ngFor="let tel of user.telephone">{{tel}}</div>
+        </div>
+        <div class="display-inline">
+            <fa-icon icon="envelope" class="light-text"></fa-icon>
+            <div>{{user.email}}</div>
+        </div>
+        <div class="display-inline">
+            <fa-icon icon="globe" class="light-text"></fa-icon>
+            <div>{{user.web}}</div>
+        </div>
+    </div>
+    <div class="status display-columns">
+        <div class="status-item">
+            <fa-icon icon="check"></fa-icon>
+            <div>{{'personal_information.status.' + user.status | translate}}</div>
+        </div>
+    </div>
 </div>

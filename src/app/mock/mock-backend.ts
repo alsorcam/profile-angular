@@ -1,28 +1,39 @@
-import { Http, BaseRequestOptions, Response, ResponseOptions, RequestMethod } from '@angular/http';
-import { MockBackend, MockConnection } from '@angular/http/testing';
-import * as mock_data from './mock-data';
+import { Injectable } from '@angular/core';
+import { HttpRequest, HttpResponse, HttpHandler, HttpEvent, HttpInterceptor, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { Observable, of, throwError } from 'rxjs';
+import { delay, mergeMap, materialize, dematerialize } from 'rxjs/operators';
 
-export function httpFactory(backend: MockBackend, options: BaseRequestOptions) {
+import { MockData } from './mock-data';
 
-    backend.connections.subscribe((connection: MockConnection) => {
-        setTimeout(() => {
-            if (connection.request.url.endsWith('/api/rest/user') && connection.request.method === RequestMethod.Get) {
-                console.log('mockBackend - get user');
-                const user = mock_data.users.filter(item => item.id = 1);
-                connection.mockRespond(new Response(
-                    new ResponseOptions({
-                        status: 200,
-                        body: user
-                    })
-                ));
+@Injectable()
+export class FakeBackendInterceptor implements HttpInterceptor {
+    constructor() { }
+
+    intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+        const users: any[] = MockData.users || [];
+        // wrap in delayed observable to simulate server api call
+        return of(null).pipe(mergeMap(() => {
+            // get user by id
+            if (request.url.match(/\/users\/\d+$/) && request.method === 'GET') {
+                // find user by id in users array
+                const urlParts = request.url.split('/');
+                const id = parseInt(urlParts[urlParts.length - 1], 10);
+                const matchedUsers = users.filter(item => item.id === id);
+                const user = matchedUsers.length ? matchedUsers[0] : null;
+                return of(new HttpResponse({ status: 200, body: user }));
             }
-        }, 500);
-    });
-    return new Http(backend, options);
+            // pass through any requests not handled above
+            return next.handle(request);
+        }))
+        .pipe(materialize())
+        .pipe(delay(500))
+        .pipe(dematerialize());
+    }
 }
 
-export let mockBackendProvider = {
-    provide: Http,
-    useFactory: httpFactory,
-    deps: [MockBackend, BaseRequestOptions]
+export let fakeBackendProvider = {
+    // use fake backend in place of Http service for backend-less development
+    provide: HTTP_INTERCEPTORS,
+    useClass: FakeBackendInterceptor,
+    multi: true
 };

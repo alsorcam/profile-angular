@@ -3,6 +3,32 @@
 @import "~bootstrap/scss/bootstrap.scss";
 @import  'grid';
 
+.bold {
+    font-weight: bold;
+}
+.light-text {
+    color: $light-grey;
+}
+.larger-text {
+    font-size: 1.5rem;
+}
+
+.display-inline {
+    display: flex;
+    flex-direction: row;
+}
+.display-inline > * {
+    margin-right: 0.5rem;
+}
+.display-columns {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: center;
+    text-align: center;
+}
+
 // Import only what's going to be used
 // @import 
 //   'functions',

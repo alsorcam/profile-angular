@@ -1,0 +1,43 @@
+@import './../../../../../sass/variables';
+.photo {
+    grid-area: photo;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.photo img {
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+}
+.profile-info {
+    grid-area: information;
+    display: flex;
+    flex-flow: column wrap;
+    margin-left: 1rem;
+}
+.status {
+    grid-area: status;
+}
+.status-item {
+    background: $green;
+    color: $white;
+    padding: 0.3rem;
+    border-radius: 0.4rem;
+}
+.information-container {
+    display: grid;
+    grid-template-columns: 1fr auto 10%;
+    grid-template-areas: "photo information status";
+}
+.profile-info > div {
+    margin-bottom: 0.5rem;
+}
+
+.user-years {
+    padding: 0.5rem;
+    border: 1px solid $light-grey;
+    border-radius: 1rem;
+    padding: 0.2rem 1rem;
+}
