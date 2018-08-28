@@ -1,6 +1,14 @@
+.app-header {
+    grid-area: header;
+}
+
+.app-profile {
+    grid-area: profile;
+}
+
 .container {
     display: grid;
-    // grid-template-columns: auto;
+    grid-template-columns: auto;
     grid-template-rows: 10% auto;
     grid-template-areas: 
         "header"
