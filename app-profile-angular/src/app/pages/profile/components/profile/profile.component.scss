@@ -1,0 +1,33 @@
+@import './../../../../../sass/variables';
+.section-name {
+    grid-area: name;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: flex-start;
+}
+.section-name h5 {
+    align-self: center;
+    border-bottom: 2px solid $green;
+    margin-bottom: 0;
+    padding-bottom: 0.5em;
+}
+.actions {
+    grid-area: actions;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: flex-end;
+}
+.actions .btn {
+    width: 120px;
+    margin-left: 0.3em;
+}
+
+.profile-header {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    grid-template-areas:
+        "name actions";
+    grid-gap: 40px;
+}

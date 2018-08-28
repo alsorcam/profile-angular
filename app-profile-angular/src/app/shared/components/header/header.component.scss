@@ -1,0 +1,15 @@
+.logo {
+    grid-area: logo;
+}
+.dropdown {
+    grid-area: dropdown;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+.header-container {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    grid-template-areas: 
+        "logo dropdown";
+    grid-gap: 40px;
+}

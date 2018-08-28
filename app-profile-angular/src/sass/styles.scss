@@ -1,5 +1,7 @@
 @import './variables';
 @import './mixins';
+@import "~bootstrap/scss/bootstrap.scss";
+@import  'grid';
 
 // Import only what's going to be used
 // @import 
@@ -11,7 +13,6 @@
 //   'type',
 //   'images',
 //   'code',
-//   'grid',
 //   'tables',
 //   'forms',
 //   'buttons',

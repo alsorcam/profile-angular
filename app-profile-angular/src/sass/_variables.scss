@@ -1,0 +1,13 @@
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+
+$background-grey: #fafafa;
+$dark-grey: #333333;
+$light-grey: #989898;
+$green: #65b61b;
+$black: #000000;
+$white: #ffffff;
+  
+$theme-colors: (
+  primary: $green,
+);
