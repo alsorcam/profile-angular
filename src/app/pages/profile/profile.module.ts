@@ -6,10 +6,12 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faPhone, faEnvelope, faGlobe, faVenus, faMars, faCheck } from '@fortawesome/free-solid-svg-icons';
 
+import { NgbProgressbarModule } from '@ng-bootstrap/ng-bootstrap';
+
 import { TranslateModule } from './../../shared/modules/translate/translate.module';
 import { ProfileComponent } from './components/profile/profile.component';
 import { PersonalInformationComponent } from './components/personal-information/personal-information.component';
-
+import { LanguagesLevelComponent } from './components/languages-level/languages-level.component';
 import { BackendService } from './../../shared/services/backend.service';
 
 library.add(faPhone);
@@ -22,13 +24,15 @@ library.add(faCheck);
 @NgModule({
   declarations: [
     ProfileComponent,
-    PersonalInformationComponent
+    PersonalInformationComponent,
+    LanguagesLevelComponent
   ],
   imports: [
     CommonModule,
     TranslateModule,
     HttpClientModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    NgbProgressbarModule
   ],
   providers: [
     BackendService

@@ -3,20 +3,24 @@
 @import "~bootstrap/scss/bootstrap.scss";
 @import  'grid';
 
+ /* Override styles */
 body {
     background: $background-grey;
 }
-
 a {
     color: $green;
 }
-
 a:hover {
     color:$darkgreen;
 }
+.progress {
+    background: $lightorange;
+    height: 0.5rem;
+    width: 100%;
+}
 
 
-
+/* Global styles */
 .bold {
     font-weight: bold;
 }
@@ -42,6 +46,13 @@ a:hover {
     align-items: center;
     text-align: center;
 }
+
+.title {
+    color: $green;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
 
 // Import only what's going to be used
 // @import 

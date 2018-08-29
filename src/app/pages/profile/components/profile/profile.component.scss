@@ -6,7 +6,7 @@
     align-items: center;
     justify-content: flex-start;
 }
-.section-name h5 {
+.section-name h4 {
     align-self: center;
     border-bottom: 2px solid $green;
     margin-bottom: 0;
@@ -36,6 +36,7 @@
 .personal-information {
     grid-area: details;
 }
+
 .user-services {
     grid-area: services;
 }

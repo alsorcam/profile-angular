@@ -3,6 +3,7 @@ export const LANG_EN_TRANS = {
     'profile': 'Profile',
     'personal_information.years': 'years',
     'personal_information.status.1': 'Available',
+    'languages': 'Languages',
     'languages.level.1': 'Advanced',
     'languages.level.2': 'Safe to negotiate',
     'locale.DE': 'German',
