@@ -12,8 +12,6 @@ export class FakeBackendInterceptor implements HttpInterceptor {
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         const users: any[] = MockData.users || [];
         const languages: any[] = MockData.languages || [];
-        const qualifications: any[] = MockData.qualifications || [];
-        const geoCover: any[] = MockData.geographical_cover || [];
 
         // Wrap in delayed observable to simulate server api call
         return of(null).pipe(mergeMap(() => {
@@ -36,29 +34,33 @@ export class FakeBackendInterceptor implements HttpInterceptor {
             }
             // Get user qualifications
             if (request.url.match(/\/users\/\d+\/qualifications$/) && request.method === 'GET') {
-                console.log(qualifications);
-                const urlParts = request.url.split('/');
-                const id = parseInt(urlParts[urlParts.length - 2], 10);
-                const matchedItems = qualifications.filter(itemArray => itemArray.user_id === id);
-                const qualificationsItem = matchedItems.length ? matchedItems[0] : null;
+                const qualificationsItem = this.getItemFromArray(request.url, MockData.qualifications || []);
                 return of(new HttpResponse({ status: 200, body: qualificationsItem }));
             }
             // Get user geographical cover
             if (request.url.match(/\/users\/\d+\/geographical-cover$/) && request.method === 'GET') {
-                console.log(qualifications);
-                const urlParts = request.url.split('/');
-                const id = parseInt(urlParts[urlParts.length - 2], 10);
-                const matchedItems = geoCover.filter(itemArray => itemArray.user_id === id);
-                const geoItem = matchedItems.length ? matchedItems[0] : null;
+                const geoItem = this.getItemFromArray(request.url, MockData.geographical_cover || []);
                 return of(new HttpResponse({ status: 200, body: geoItem }));
             }
-
+            // Get user bank account
+            if (request.url.match(/\/users\/\d+\/bank-account$/) && request.method === 'GET') {
+                const bankItem = this.getItemFromArray(request.url, MockData.bank_account || []);
+                return of(new HttpResponse({ status: 200, body: bankItem }));
+            }
             // Pass through any requests not handled above
             return next.handle(request);
         }))
         .pipe(materialize())
         .pipe(delay(500))
         .pipe(dematerialize());
+    }
+
+    private getItemFromArray(url: string, array: any[]): any {
+        const urlParts = url.split('/');
+        const id = parseInt(urlParts[urlParts.length - 2], 10);
+        const matchedItems = array.filter(itemArray => itemArray.user_id === id);
+        const item = matchedItems.length ? matchedItems[0] : null;
+        return item;
     }
 }
 

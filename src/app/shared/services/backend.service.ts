@@ -24,4 +24,8 @@ export class BackendService {
     getUserGeographicalCover(user_id: number) {
         return this.http.get(this.ENDPOINT + '/users/' + user_id + '/geographical-cover');
     }
+
+    getUserBankAccount(user_id: number) {
+        return this.http.get(this.ENDPOINT + '/users/' + user_id + '/bank-account');
+    }
 }
