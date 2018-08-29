@@ -13,17 +13,17 @@
         </div>
         <div class="bold">{{user.name}}</div>
         <div class="light-text">{{user.address}}</div>
-        <div class="display-inline">
+        <div class="display-inline" *ngIf="user.telephone">
             <fa-icon icon="phone" class="light-text"></fa-icon>
             <div *ngFor="let tel of user.telephone">{{tel}}</div>
         </div>
-        <div class="display-inline">
+        <div class="display-inline" *ngIf="user.email">
             <fa-icon icon="envelope" class="light-text"></fa-icon>
             <div>{{user.email}}</div>
         </div>
-        <div class="display-inline">
+        <div class="display-inline" *ngIf="user.web">
             <fa-icon icon="globe" class="light-text"></fa-icon>
-            <div>{{user.web}}</div>
+            <a href="{{user.web}}" target="_blank">{{user.web}}</a>
         </div>
     </div>
     <div class="status display-columns">
