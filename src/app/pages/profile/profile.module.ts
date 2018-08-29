@@ -15,6 +15,7 @@ import { PersonalInformationComponent } from './components/personal-information/
 import { LanguagesLevelComponent } from './components/languages-level/languages-level.component';
 import { ProfileQualificationsComponent } from './components/profile-qualifications/profile-qualifications.component';
 import { GeographicalCoverComponent } from './components/geographical-cover/geographical-cover.component';
+import { BankAccountComponent } from './components/bank-account/bank-account.component';
 
 library.add(faPhone);
 library.add(faEnvelope);
@@ -29,7 +30,8 @@ library.add(faCheck);
     PersonalInformationComponent,
     LanguagesLevelComponent,
     ProfileQualificationsComponent,
-    GeographicalCoverComponent
+    GeographicalCoverComponent,
+    BankAccountComponent
   ],
   imports: [
     CommonModule,
