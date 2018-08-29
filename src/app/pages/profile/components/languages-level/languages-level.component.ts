@@ -15,7 +15,6 @@ export class LanguagesLevelComponent implements OnInit{
         this.backendService.getUserLanguages(1)
             .subscribe(res => {
                 this.languages = res;
-                console.log(this.languages);
             });
     }
 }

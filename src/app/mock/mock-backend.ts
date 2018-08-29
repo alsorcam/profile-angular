@@ -12,11 +12,12 @@ export class FakeBackendInterceptor implements HttpInterceptor {
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         const users: any[] = MockData.users || [];
         const languages: any[] = MockData.languages || [];
-        // wrap in delayed observable to simulate server api call
+        const qualifications: any[] = MockData.qualifications || [];
+        // Wrap in delayed observable to simulate server api call
         return of(null).pipe(mergeMap(() => {
-            // get user by id
+
+            // Get user by id
             if (request.url.match(/\/users\/\d+$/) && request.method === 'GET') {
-                // find user by id in users array
                 const urlParts = request.url.split('/');
                 const id = parseInt(urlParts[urlParts.length - 1], 10);
                 const matchedUsers = users.filter(item => item.id === id);
@@ -25,14 +26,23 @@ export class FakeBackendInterceptor implements HttpInterceptor {
             }
             // Get user language
             if (request.url.match(/\/users\/\d+\/languages$/) && request.method === 'GET') {
-                // find user by id in users array
                 const urlParts = request.url.split('/');
                 const id = parseInt(urlParts[urlParts.length - 2], 10);
                 const matchedLanguages = languages.filter(item => item.user_id === id);
                 const langs = matchedLanguages.length ? matchedLanguages : null;
                 return of(new HttpResponse({ status: 200, body: matchedLanguages }));
             }
-            // pass through any requests not handled above
+            // Get user qualifications
+            if (request.url.match(/\/users\/\d+\/qualifications$/) && request.method === 'GET') {
+                console.log(qualifications);
+                const urlParts = request.url.split('/');
+                const id = parseInt(urlParts[urlParts.length - 2], 10);
+                const matchedItems = qualifications.filter(itemArray => itemArray.user_id === id);
+                const qualificationsItem = matchedItems.length ? matchedItems[0] : null;
+                return of(new HttpResponse({ status: 200, body: qualificationsItem }));
+            }
+
+            // Pass through any requests not handled above
             return next.handle(request);
         }))
         .pipe(materialize())

@@ -1,0 +1,17 @@
+<div class="wrapper">
+    <div class="qualifications-container">
+        <h5 class="title">{{'qualifications' | translate | uppercase}}</h5>
+        <div *ngIf="qualifications" class="two-columns-container">
+            <!-- License -->
+            <div class="field-name">{{'qualifications.lawyers_license' | translate}}:</div>
+            <div *ngIf="qualifications.lawyers_license != 0">{{'yes' | translate}}</div>
+            <div *ngIf="qualifications.lawyers_license == 0">{{'no' | translate}}</div>
+            <!-- License year -->
+            <div class="field-name">{{'qualifications.year_license' | translate}}:</div>
+            <div>{{qualifications.year_license}}</div>
+            <!-- Qualifications list -->
+            <div class="field-name">{{'qualifications' | translate}}:</div>
+            <div><label *ngFor="let qual of qualifications.qualifications">{{qual}}</label></div>
+        </div>
+    </div>
+</div>

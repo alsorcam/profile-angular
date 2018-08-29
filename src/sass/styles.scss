@@ -56,3 +56,13 @@ a:hover {
     padding: 1rem 0rem;
     border-bottom: 1px solid $lightgrey;
 }
+
+.two-columns-container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-gap: 0.5rem 0rem;
+}
+
+.field-name {
+    color: $grey;
+}

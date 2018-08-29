@@ -16,4 +16,8 @@ export class BackendService {
     getUserLanguages(user_id: number) {
         return this.http.get(this.ENDPOINT + '/users/' + user_id + '/languages');
     }
+
+    getUserQualifications(user_id: number) {
+        return this.http.get(this.ENDPOINT + '/users/' + user_id + '/qualifications');
+    }
 }

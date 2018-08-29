@@ -42,7 +42,7 @@ export class MockData {
             qualifications: [
                 'Certified Specialist SAV Labour Law',
                 'Specialist lawyer SAV Inheritance Law',
-                'Specialist Lawyer SAV     public static readonlyruction and real Estate Law'
+                'Specialist Lawyer SAV Construction and Real Estate Law'
             ]
         }
     ];
