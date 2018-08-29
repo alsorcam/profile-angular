@@ -65,7 +65,7 @@ export class MockData {
         {
             id: 1,
             user_id: 1,
-            owner: 'Juanjo M Marti',
+            owner: 'John F. Smith',
             IBAN: 'CH48 00700 0110 0009 7178 4',
             VAT_number: '47529348238'
         }
