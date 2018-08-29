@@ -20,5 +20,8 @@ export const LANG_EN_TRANS = {
     'action.edit_profile': 'Edit profile',
     'action.edit_offer': 'Edit offer',
     'yes': 'Yes',
-    'no': 'No'
+    'no': 'No',
+    'footer.help': 'Help',
+    'footer.report_error': 'Report error',
+    'footer.copyright': 'Copyright © 2018 COMPANY'
 };

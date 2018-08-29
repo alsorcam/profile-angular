@@ -71,5 +71,11 @@ export class MockData {
         }
     ];
 
-    public static readonly user_services = [];
+    public static readonly user_services = [
+        {
+            id: 1,
+            user_id: 1,
+            service_name: "Construction and Real State Law"
+        }
+    ];
 }
