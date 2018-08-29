@@ -25,12 +25,11 @@ a:hover {
     font-weight: bold;
 }
 .light-text {
-    color: $lightgrey;
+    color: $grey;
 }
 .larger-text {
     font-size: 1.5rem;
 }
-
 .display-inline {
     display: flex;
     flex-direction: row;
@@ -53,39 +52,7 @@ a:hover {
     margin-bottom: 2rem;
 }
 
-
-// Import only what's going to be used
-// @import 
-//   'functions',
-//   'variables',
-//   'mixins',
-//   'print',
-//   'reboot',
-//   'type',
-//   'images',
-//   'code',
-//   'tables',
-//   'forms',
-//   'buttons',
-//   'transitions',
-//   'dropdown',
-//   'button-group',
-//   'input-group',
-//   'custom-forms',
-//   'nav',
-//   'navbar',
-//   'card',
-//   'breadcrumb',
-//   'pagination',
-//   'badge',
-//   'jumbotron',
-//   'alert',
-//   'progress',
-//   'media',
-//   'list-group',
-//   'close',
-//   'modal',
-//   'tooltip',
-//   'popover',
-//   'carousel',
-//   'utilities';
+.wrapper {
+    padding: 1rem 0rem;
+    border-bottom: 1px solid $lightgrey;
+}

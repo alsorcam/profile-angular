@@ -28,7 +28,7 @@
 }
 .information-container {
     display: grid;
-    grid-template-columns: 1fr auto 10%;
+    grid-template-columns: 1fr auto auto;
     grid-template-areas: "photo information status";
 }
 .profile-info > div {
@@ -37,7 +37,7 @@
 
 .user-years {
     padding: 0.5rem;
-    border: 1px solid $lightgrey;
+    border: 1px solid $grey;
     border-radius: 1rem;
     padding: 0.2rem 1rem;
 }

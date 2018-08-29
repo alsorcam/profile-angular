@@ -1,10 +1,12 @@
-<div class="languages-container">
-    <h5 class="title">{{'languages' | translate | uppercase}}</h5>
-    <div class="languages-list" *ngIf="languages">
-        <div class="language-details" *ngFor="let lang of languages">
-            <label class="lang-level">{{'languages.level.' + lang.level | translate}}</label>
-            <ngb-progressbar type="warning" [value]="lang.level" [max]="3"></ngb-progressbar>
-            <label class="lang-name">{{'locale.' + lang.language | translate}}</label>
+<div class="wrapper">
+    <div class="languages-container">
+        <h5 class="title">{{'languages' | translate | uppercase}}</h5>
+        <div class="languages-list" *ngIf="languages">
+            <div class="language-details" *ngFor="let lang of languages">
+                <label class="lang-level">{{'languages.level.' + lang.level | translate}}</label>
+                <ngb-progressbar type="warning" [value]="lang.level" [max]="3"></ngb-progressbar>
+                <label class="lang-name">{{'locale.' + lang.language | translate}}</label>
+            </div>
         </div>
     </div>
 </div>

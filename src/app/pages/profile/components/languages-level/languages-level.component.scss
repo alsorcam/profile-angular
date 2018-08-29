@@ -1,9 +1,7 @@
 .languages-list {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
-    align-items: center;
-    align-content: flex-start;
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20%;
+    grid-gap: 2rem;
 }
 
 .language-details {
@@ -11,7 +9,6 @@
     flex-direction: column;
     text-align: center;
     flex: 1 1 0;
-    margin-right: 1.5rem;
 }
 
 .lang-level {
