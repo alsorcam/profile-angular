@@ -30,6 +30,7 @@
     display: grid;
     grid-template-columns: 1fr auto auto;
     grid-template-areas: "photo information status";
+    padding: 1rem 0rem;
 }
 .profile-info > div {
     margin-bottom: 0.5rem;
