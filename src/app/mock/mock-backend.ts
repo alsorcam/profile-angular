@@ -13,6 +13,8 @@ export class FakeBackendInterceptor implements HttpInterceptor {
         const users: any[] = MockData.users || [];
         const languages: any[] = MockData.languages || [];
         const qualifications: any[] = MockData.qualifications || [];
+        const geoCover: any[] = MockData.geographical_cover || [];
+
         // Wrap in delayed observable to simulate server api call
         return of(null).pipe(mergeMap(() => {
 
@@ -40,6 +42,15 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                 const matchedItems = qualifications.filter(itemArray => itemArray.user_id === id);
                 const qualificationsItem = matchedItems.length ? matchedItems[0] : null;
                 return of(new HttpResponse({ status: 200, body: qualificationsItem }));
+            }
+            // Get user geographical cover
+            if (request.url.match(/\/users\/\d+\/geographical-cover$/) && request.method === 'GET') {
+                console.log(qualifications);
+                const urlParts = request.url.split('/');
+                const id = parseInt(urlParts[urlParts.length - 2], 10);
+                const matchedItems = geoCover.filter(itemArray => itemArray.user_id === id);
+                const geoItem = matchedItems.length ? matchedItems[0] : null;
+                return of(new HttpResponse({ status: 200, body: geoItem }));
             }
 
             // Pass through any requests not handled above
