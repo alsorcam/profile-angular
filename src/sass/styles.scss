@@ -3,11 +3,25 @@
 @import "~bootstrap/scss/bootstrap.scss";
 @import  'grid';
 
+body {
+    background: $background-grey;
+}
+
+a {
+    color: $green;
+}
+
+a:hover {
+    color:$darkgreen;
+}
+
+
+
 .bold {
     font-weight: bold;
 }
 .light-text {
-    color: $light-grey;
+    color: $lightgrey;
 }
 .larger-text {
     font-size: 1.5rem;
