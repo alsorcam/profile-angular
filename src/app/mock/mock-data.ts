@@ -2,18 +2,18 @@ export class MockData {
     public static readonly users = [
         {
             id: 1,
-            position: 'Prof. Juanjo Marti',
-            name: 'Juanjo M Marti',
+            position: 'Prof. John Smith',
+            name: 'John F. Smith',
             status: 1,
             years: 68,
             sex: 'M',
-            address: 'Alte Landstrasse 21 8800 Thaiwii ZH CH',
+            address: 'Old Country Street, 21',
             telephone: [
                 '+34658995566',
                 '+41555555555'
             ],
-            email: 'juanjo@colba.es',
-            web: 'http://www.colba.es'
+            email: 'johnsmith@mail.com',
+            web: 'http://www.profile.com'
         }
     ];
 
