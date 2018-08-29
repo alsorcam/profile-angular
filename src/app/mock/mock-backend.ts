@@ -11,6 +11,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
 
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         const users: any[] = MockData.users || [];
+        const languages: any[] = MockData.languages || [];
         // wrap in delayed observable to simulate server api call
         return of(null).pipe(mergeMap(() => {
             // get user by id
@@ -21,6 +22,15 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                 const matchedUsers = users.filter(item => item.id === id);
                 const user = matchedUsers.length ? matchedUsers[0] : null;
                 return of(new HttpResponse({ status: 200, body: user }));
+            }
+            // Get user language
+            if (request.url.match(/\/users\/\d+\/languages$/) && request.method === 'GET') {
+                // find user by id in users array
+                const urlParts = request.url.split('/');
+                const id = parseInt(urlParts[urlParts.length - 2], 10);
+                const matchedLanguages = languages.filter(item => item.user_id === id);
+                const langs = matchedLanguages.length ? matchedLanguages : null;
+                return of(new HttpResponse({ status: 200, body: matchedLanguages }));
             }
             // pass through any requests not handled above
             return next.handle(request);
