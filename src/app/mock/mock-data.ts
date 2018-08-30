@@ -75,7 +75,35 @@ export class MockData {
         {
             id: 1,
             user_id: 1,
-            service_name: "Construction and Real State Law"
+            service_name: 'Construction and Real Estate Law',
+            sections: [
+                'Builders\' lien law',
+                'Building contract law',
+                'Construction and Real Estate Law (gene...',
+                'Expropiation law',
+                'Public construction and planning law',
+                'Rental and lease law (real state)',
+                'Rights of neighbours'
+            ]
+        },
+        {
+            id: 2,
+            user_id: 1,
+            service_name: 'Labour law',
+            sections: [
+                'Disputes arising from collective labour a...',
+                'Equality Law',
+                'Private labour law'
+            ]
+        },
+        {
+            id: 3,
+            user_id: 1,
+            service_name: 'Social insurance law',
+            sections: [
+                'Daily sickness benefit (KTG)',
+                'Disability insurance (IV)'
+            ]
         }
     ];
 }
