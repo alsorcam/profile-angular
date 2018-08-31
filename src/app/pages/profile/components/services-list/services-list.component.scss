@@ -1,16 +1,14 @@
 @import './../../../../../sass/variables';
+
+/* General container */
 .services-container {
     padding-bottom: 1rem;
     padding-top: 2rem;
     padding-left: 1rem;
     padding-right: 1rem;
 }
-.toggle {
-    padding-right: 0.5rem;
-}
-.toggle:hover {
-    cursor: pointer;
-}
+
+/* Service card */
 .section-card {
     margin-bottom: 1rem;
     border-bottom: 1px solid $lightgrey;
@@ -22,6 +20,7 @@
     align-items: baseline;
 }
 
+/* Card content container */
 .fee-container {
     background: $background-grey;
     padding: 0.75rem 1rem;
@@ -40,10 +39,23 @@
 .rate-container > label {
     margin-left: 1rem;
 }
+
+/* Expand/Collapse */
+.toggle {
+    padding-right: 0.5rem;
+}
+.toggle:hover {
+    cursor: pointer;
+}
+
+/* Starts Rating */
 .star {
     font-size: 1.5rem;
     color: $lightorange;
 }
 .filled {
     color: $orange;
+}
+.stars-container:focus {
+    outline: none;
 }
