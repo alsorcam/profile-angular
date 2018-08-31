@@ -11,7 +11,6 @@ export class FakeBackendInterceptor implements HttpInterceptor {
 
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         const users: any[] = MockData.users || [];
-        const languages: any[] = MockData.languages || [];
 
         // Wrap in delayed observable to simulate server api call
         return of(null).pipe(mergeMap(() => {
@@ -26,11 +25,8 @@ export class FakeBackendInterceptor implements HttpInterceptor {
             }
             // Get user language
             if (request.url.match(/\/users\/\d+\/languages$/) && request.method === 'GET') {
-                const urlParts = request.url.split('/');
-                const id = parseInt(urlParts[urlParts.length - 2], 10);
-                const matchedLanguages = languages.filter(item => item.user_id === id);
-                const langs = matchedLanguages.length ? matchedLanguages : null;
-                return of(new HttpResponse({ status: 200, body: matchedLanguages }));
+                const langs = this.getArrayItems(request.url, MockData.languages || []);
+                return of(new HttpResponse({ status: 200, body: langs }));
             }
             // Get user qualifications
             if (request.url.match(/\/users\/\d+\/qualifications$/) && request.method === 'GET') {
@@ -47,6 +43,11 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                 const bankItem = this.getItemFromArray(request.url, MockData.bank_account || []);
                 return of(new HttpResponse({ status: 200, body: bankItem }));
             }
+            // Get user services
+            if (request.url.match(/\/users\/\d+\/services$/) && request.method === 'GET') {
+                const servs = this.getArrayItems(request.url, MockData.user_services || []);
+                return of(new HttpResponse({ status: 200, body: servs }));
+            }
             // Pass through any requests not handled above
             return next.handle(request);
         }))
@@ -61,6 +62,14 @@ export class FakeBackendInterceptor implements HttpInterceptor {
         const matchedItems = array.filter(itemArray => itemArray.user_id === id);
         const item = matchedItems.length ? matchedItems[0] : null;
         return item;
+    }
+
+    private getArrayItems(url: string, array: any[]): any[] {
+        const urlParts = url.split('/');
+        const id = parseInt(urlParts[urlParts.length - 2], 10);
+        const matchedItems = array.filter(itemArray => itemArray.user_id === id);
+        const items = matchedItems.length ? matchedItems : null;
+        return items;
     }
 }
 
