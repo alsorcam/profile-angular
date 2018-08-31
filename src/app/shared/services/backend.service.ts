@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 import { Properties } from './../utils/properties';
 
@@ -9,27 +10,27 @@ export class BackendService {
 
     constructor(private http: HttpClient) { }
 
-    getUser(user_id: number) {
+    getUser(user_id: number): Observable<any> {
         return this.http.get(this.ENDPOINT + '/users/' + user_id);
     }
 
-    getUserLanguages(user_id: number) {
-        return this.http.get(this.ENDPOINT + '/users/' + user_id + '/languages');
+    getUserLanguages(user_id: number): Observable<any[]> {
+        return this.http.get<any[]>(this.ENDPOINT + '/users/' + user_id + '/languages');
     }
 
-    getUserQualifications(user_id: number) {
+    getUserQualifications(user_id: number): Observable<any> {
         return this.http.get(this.ENDPOINT + '/users/' + user_id + '/qualifications');
     }
 
-    getUserGeographicalCover(user_id: number) {
+    getUserGeographicalCover(user_id: number): Observable<any> {
         return this.http.get(this.ENDPOINT + '/users/' + user_id + '/geographical-cover');
     }
 
-    getUserBankAccount(user_id: number) {
+    getUserBankAccount(user_id: number): Observable<any> {
         return this.http.get(this.ENDPOINT + '/users/' + user_id + '/bank-account');
     }
 
-    getUserServices(user_id: number) {
-        return this.http.get(this.ENDPOINT + '/users/' + user_id + '/services');
+    getUserServices(user_id: number): Observable<any[]> {
+        return this.http.get<any[]>(this.ENDPOINT + '/users/' + user_id + '/services');
     }
 }

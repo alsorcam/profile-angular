@@ -1,14 +1,11 @@
 @import './../../../../../sass/variables';
 .services-container {
-    padding: 2rem 1rem;
-}
-
-.section-name {
-    grid-area: name;
+    padding-bottom: 1rem;
+    padding-top: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 .toggle {
-    grid-area: toggle;
-    justify-self: end;
     padding-right: 0.5rem;
 }
 .toggle:hover {
@@ -19,9 +16,10 @@
     border-bottom: 1px solid $lightgrey;
 }
 .section-title {
-    display: grid;
-    grid-template-areas: "name toggle";
-    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
 }
 
 .fee-container {

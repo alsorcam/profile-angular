@@ -3,22 +3,22 @@
     <div *ngFor="let service of services">
         <label class="subtitle">{{service.service_name}}</label>
         <div *ngFor="let section of service.sections" class="section-card">
-            <div class="section-title subtitle">
-                <label class="section-name">{{section.section_name}}</label>
-                <label class="toggle" *ngIf="showFee" (click)="onClickShow()">
+            <div class="section-title bold" [ngClass]="{'green-text' : !section.hidden}">
+                <label>{{section.section_name}}</label>
+                <label class="toggle" *ngIf="!section.hidden" (click)="onClickShow(service.service_name, section.id)">
                     {{'hide' | translate}}
                     <fa-icon icon="angle-up"></fa-icon>
                 </label>
-                <label class="toggle" *ngIf="!showFee" (click)="onClickShow()">
+                <label class="toggle" *ngIf="section.hidden" (click)="onClickShow(service.service_name, section.id)">
                     {{'show' | translate}}
                     <fa-icon icon="angle-down"></fa-icon>
                 </label>
             </div>
-            <div *ngIf="showFee" class="fee-container">
+            <div *ngIf="!section.hidden" class="fee-container">
                 <label>{{'placeholder.fee' | translate}}</label>
                 <label class="bold">{{'placeholder.rate' | translate}}</label>
             </div>
-            <div *ngIf="!showFee" class="rate-container">
+            <div *ngIf="section.hidden" class="rate-container">
                 <ngb-rating [rate]="section.section_rate" [max]="maxRating">
                     <ng-template let-fill="fill" let-index="index">
                         <span class="star">&#9733;</span>
