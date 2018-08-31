@@ -24,12 +24,12 @@ export const LANG_EN_TRANS = {
     'no': 'No',
     'hide': 'Hide',
     'show': 'Show',
+    'header.order_overview': 'Order Overview',
+    'header.lawyer': 'Lawyer',
+    'header.logo': 'Logo',
     'footer.help': 'Help',
     'footer.report_error': 'Report error',
     'footer.copyright': 'Copyright © 2018 COMPANY',
-
-
-
     'placeholder.fee': 'Fee',
     'placeholder.rate': '35 CHF per hour'
 };

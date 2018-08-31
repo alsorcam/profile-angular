@@ -18,8 +18,7 @@ import { GeographicalCoverComponent } from './components/geographical-cover/geog
 import { BankAccountComponent } from './components/bank-account/bank-account.component';
 import { ServicesListComponent } from './components/services-list/services-list.component';
 
-library.add(faPhone, faEnvelope, faGlobe, faVenus, faMars, faCheck);
-library.add(faAngleDown, faAngleUp);
+library.add(faPhone, faEnvelope, faGlobe, faVenus, faMars, faCheck, faAngleDown, faAngleUp);
 
 @NgModule({
   declarations: [

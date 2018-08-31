@@ -1,15 +1,16 @@
-.logo {
-    grid-area: logo;
-}
-.dropdown {
-    grid-area: dropdown;
-    justify-content: flex-end;
-    align-items: flex-end;
-}
 .header-container {
-    display: grid;
-    grid-template-columns: 2fr 2fr;
-    grid-template-areas: 
-        "logo dropdown";
-    grid-gap: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+.dropdown-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.dropdown-text {
+    display: flex;
+    flex-direction: column;
+    margin-right: 1rem;
 }

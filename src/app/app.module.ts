@@ -10,6 +10,12 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
 
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faBolt } from '@fortawesome/free-solid-svg-icons';
+
+library.add(faBolt);
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +26,8 @@ import { FooterComponent } from './shared/components/footer/footer.component';
     BrowserModule,
     HttpClientModule,
     TranslateModule.forRoot(),
-    ProfileModule
+    ProfileModule,
+    FontAwesomeModule
   ],
   providers: [
     fakeBackendProvider

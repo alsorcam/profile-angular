@@ -1,4 +1,15 @@
 <header class="header-container">
-    <div class="logo">IMG LOGO</div>
-    <div class="dropdown">Dropdwon</div>
+    <div class="logo">
+        <h3>
+            <fa-icon icon="bolt" class="green-text"></fa-icon>
+            {{'header.logo' | translate | uppercase }}
+        </h3>
+    </div>
+    <div class="dropdown-container">
+        <div class="dropdown-text">
+            <div class="bold">{{'header.order_overview' | translate }}</div>
+            <div class="small-text">{{'header.lawyer' | translate }} {{'header.lawyer' | translate }}</div>
+        </div>
+        <fa-icon icon="angle-down"></fa-icon>
+    </div>
 </header>

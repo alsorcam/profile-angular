@@ -1,16 +1,17 @@
 @import './../../../../../sass/variables';
+
+/* Profile header */
 .section-name {
     grid-area: name;
     display: flex;
     flex-flow: row wrap;
     align-items: center;
     justify-content: flex-start;
+    border-bottom: 2px solid $green;
 }
 .section-name h4 {
     align-self: center;
-    border-bottom: 2px solid $green;
     margin-bottom: 0;
-    padding-bottom: 0.5em;
 }
 .actions {
     grid-area: actions;
@@ -23,25 +24,27 @@
     width: 120px;
     margin-left: 0.3em;
 }
-
 .profile-header {
     display: grid;
-    grid-template-columns: 2fr 3fr;
+    grid-template-columns: auto 3fr;
     grid-template-areas:
         "name actions";
     grid-gap: 40px;
     margin-bottom: 2em;
+    border-bottom: 1px solid $lightgrey;
+}
+.profile-header > div {
+    padding-bottom: 1.5rem;
 }
 
+/* Profile information */
 .personal-information {
     grid-area: details;
 }
-
 .user-services {
     grid-area: services;
     background-color: $white;
 }
-
 .profile-container {
     display: grid;
     grid-template-columns: 2fr 1.5fr;
