@@ -1,6 +1,6 @@
 <div class="wrapper">
     <div class="languages-container">
-        <h5 class="title">{{'languages' | translate | uppercase}}</h5>
+        <h5 class="subtitle">{{'languages' | translate | uppercase}}</h5>
         <div class="languages-list" *ngIf="languages">
             <div class="language-details" *ngFor="let lang of languages">
                 <label class="lang-level">{{'languages.level.' + lang.level | translate}}</label>

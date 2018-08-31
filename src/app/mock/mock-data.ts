@@ -77,13 +77,30 @@ export class MockData {
             user_id: 1,
             service_name: 'Construction and Real Estate Law',
             sections: [
-                'Builders\' lien law',
-                'Building contract law',
-                'Construction and Real Estate Law (gene...',
-                'Expropiation law',
-                'Public construction and planning law',
-                'Rental and lease law (real state)',
-                'Rights of neighbours'
+                {
+                    section_name: 'Builders\' lien law',
+                    section_rate: 0
+                },
+                {
+                    section_name: 'Building contract law',
+                    section_rate: 1
+                },
+                {
+                    section_name: 'Construction and Real Estate Law (gene...',
+                    section_rate: 2
+                },
+                {
+                    section_name: 'Public construction and planning law',
+                    section_rate: 3
+                },
+                {
+                    section_name: 'Rental and lease law (real state)',
+                    section_rate: 4
+                },
+                {
+                    section_name: 'Rights of neighbours',
+                    section_rate: 5
+                }
             ]
         },
         {
@@ -91,9 +108,18 @@ export class MockData {
             user_id: 1,
             service_name: 'Labour law',
             sections: [
-                'Disputes arising from collective labour a...',
-                'Equality Law',
-                'Private labour law'
+                {
+                    section_name: 'Disputes arising from collective labour a...',
+                    section_rate: 0
+                },
+                {
+                    section_name: 'Equality Law',
+                    section_rate: 1
+                },
+                {
+                    section_name: 'Private labour law',
+                    section_rate: 2
+                }
             ]
         },
         {
@@ -101,8 +127,14 @@ export class MockData {
             user_id: 1,
             service_name: 'Social insurance law',
             sections: [
-                'Daily sickness benefit (KTG)',
-                'Disability insurance (IV)'
+                {
+                    section_name: 'Daily sickness benefit (KTG)',
+                    section_rate: 3
+                },
+                {
+                    section_name: 'Disability insurance (IV)',
+                    section_rate: 1
+                }
             ]
         }
     ];

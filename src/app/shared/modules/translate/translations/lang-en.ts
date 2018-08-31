@@ -19,9 +19,17 @@ export const LANG_EN_TRANS = {
     'action.back': 'Back',
     'action.edit_profile': 'Edit profile',
     'action.edit_offer': 'Edit offer',
+    'services': 'Services',
     'yes': 'Yes',
     'no': 'No',
+    'hide': 'Hide',
+    'show': 'Show',
     'footer.help': 'Help',
     'footer.report_error': 'Report error',
-    'footer.copyright': 'Copyright © 2018 COMPANY'
+    'footer.copyright': 'Copyright © 2018 COMPANY',
+
+
+
+    'placeholder.fee': 'Fee',
+    'placeholder.rate': '35 CHF per hour'
 };

@@ -46,10 +46,14 @@ a:hover {
     text-align: center;
 }
 
-.title {
+.subtitle {
     color: $green;
     font-weight: bold;
     margin-bottom: 1.5rem;
+}
+
+.title {
+    font-weight: bold;
 }
 
 .wrapper {

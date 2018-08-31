@@ -39,11 +39,13 @@
 
 .user-services {
     grid-area: services;
+    background-color: $white;
 }
 
 .profile-container {
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 2fr 1.5fr;
     grid-template-rows: auto;
     grid-template-areas: "details services";
+    grid-gap: 2rem;
 }

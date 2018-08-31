@@ -4,4 +4,6 @@ export class Properties {
         { code: 'en', largeCode: 'en-EN', name: 'English' }
     ];
     public static readonly BACKEND_SERVICES_ENDPOINT = '/api';
+
+    public static readonly MAX_RATING = 5;
 }
