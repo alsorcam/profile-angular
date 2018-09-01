@@ -38,17 +38,11 @@
 }
 
 /* Profile information */
-.personal-information {
-    grid-area: details;
-}
 .user-services {
-    grid-area: services;
     background-color: $white;
 }
 .profile-container {
-    display: grid;
-    grid-template-columns: 2fr 1.5fr;
-    grid-template-rows: auto;
-    grid-template-areas: "details services";
-    grid-gap: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
