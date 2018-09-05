@@ -17,8 +17,10 @@
     flex-flow: column wrap;
     margin-left: 1rem;
 }
-.status {
-    grid-area: status;
+.user-name {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gaP: 3rem;
 }
 .status-item {
     background: $green;
@@ -29,7 +31,7 @@
 .information-container {
     display: grid;
     grid-template-columns: 1fr auto auto;
-    grid-template-areas: "photo information status";
+    grid-template-areas: "photo information";
     padding: 1rem 0rem;
 }
 .profile-info > div {
