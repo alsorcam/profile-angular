@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { fakeBackendProvider } from './mock/mock-backend';
 import { TranslateModule } from './shared/modules/translate/translate.module';
@@ -12,9 +13,9 @@ import { FooterComponent } from './shared/components/footer/footer.component';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faBolt } from '@fortawesome/free-solid-svg-icons';
+import { faBolt, faCircle } from '@fortawesome/free-solid-svg-icons';
 
-library.add(faBolt);
+library.add(faBolt, faCircle);
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ library.add(faBolt);
     HttpClientModule,
     TranslateModule.forRoot(),
     ProfileModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    NgbModule.forRoot()
   ],
   providers: [
     fakeBackendProvider

@@ -1,15 +1,21 @@
 <header class="header-container row">
     <div class="logo">
         <h3>
-            <fa-icon icon="bolt" class="green-text"></fa-icon>
+            <fa-icon icon="bolt" class="primary-color-text"></fa-icon>
             {{'header.logo' | translate | uppercase }}
         </h3>
     </div>
-    <div class="dropdown-container">
-        <div class="dropdown-text">
-            <div class="bold">{{'header.order_overview' | translate }}</div>
-            <div class="small-text">{{'header.lawyer' | translate }} {{'header.lawyer' | translate }}</div>
+    <div ngbDropdown class="dropdown d-inline-block">
+        <div id="dropdownSettings" ngbDropdownToggle>
+            <fa-icon icon="cogs" class="primary-color-text"></fa-icon>
+            <a>{{'header.settings' | translate }}</a>
         </div>
-        <fa-icon icon="angle-down"></fa-icon>
+        <div class="dropdown-list" ngbDropdownMenu aria-labelledby="dropdownSettings">
+            <label>{{'header.themes' | translate }}</label>
+            <button *ngFor="let theme of colorThemes" class="dropdown-item" (click)="selectTheme(theme.name)">
+                <fa-icon icon="circle" class="primary-color-text" [ngStyle]="{color: theme.code}"></fa-icon>
+                {{'theme.' + theme.name | translate }}
+            </button>
+        </div>
     </div>
 </header>

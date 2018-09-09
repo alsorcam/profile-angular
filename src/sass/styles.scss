@@ -1,47 +1,94 @@
 @import './variables';
 @import './mixins';
 @import "~bootstrap/scss/bootstrap.scss";
-@import  'grid';
+@import  'grid', 'dropdown';
 
  /* Override styles */
 body {
-    background: $background-grey;
+    background: $backgroundColor;
 }
 a {
-    color: $green;
+    @include themify($themes) {
+        color: themed('primaryColor'); 
+        &:hover {
+            color: themed('primaryDarkColor'); 
+        }
+    }
 }
-a:hover {
-    color:$darkgreen;
+.btn-outline-primary,
+.btn-outline-primary:focus,
+.btn-outline-primary:active,
+.btn-outline-primary:not(:disabled):not(.disabled):active:focus,
+.btn-outline-primary:not(:disabled):not(.disabled).active:focus {
+    background-color: transparent;
+    background-image: none;
+    box-shadow:none;
+    outline: none;
+    @include themify($themes) {
+        color: themed('primaryColor');
+        border-color: themed('primaryColor');
+        &:hover {
+            color: #ffffff;
+            background: themed('primaryColor');
+        }
+    }
 }
+
+/* Progress bar for languages */
 .progress {
-    background: $lightorange;
+    @include themify($themes) {
+        background-color: themed('secondaryLightColor');
+        .progress-bar {
+            background-color: themed('secondaryColor');
+        }
+    }
     height: 0.5rem;
     width: 100%;
 }
-
+/* Star rating in services list */
+.stars-container {
+    .star {
+        font-size: 1.5rem;
+    }
+    @include themify($themes) {
+        .star {
+            color: themed('secondaryLightColor');
+        }
+        .filled {
+            color: themed('secondaryColor');
+        }
+    }
+}
 
 /* Global styles */
 .bold {
     font-weight: bold;
 }
 .light-text {
-    color: $grey;
+    color: $textLightColor;
 }
 .larger-text {
     font-size: 1.5rem;
 }
-.green-text {
-    color: $green;
+.primary-color-text {
+    @include themify($themes) {
+        color: themed('primaryColor');
+    }
 }
 .small-text {
     font-size: 0.7rem;
 }
+.border-bottom-green {
+    @include themify($themes) {
+        border-bottom: 2px solid themed('primaryColor');
+    }
+}
 .display-inline {
     display: flex;
     flex-direction: row;
-}
-.display-inline > * {
-    margin-right: 0.5rem;
+    & > * {
+        margin-right: 0.5rem;
+    }
 }
 .display-columns {
     display: flex;
@@ -53,7 +100,9 @@ a:hover {
 }
 
 .subtitle {
-    color: $green;
+    @include themify($themes) {
+        color: themed('primaryColor');
+    }
     font-weight: bold;
     margin-bottom: 1.5rem;
 }
@@ -64,7 +113,7 @@ a:hover {
 
 .wrapper {
     padding: 1rem 0rem;
-    border-top: 1px solid $lightgrey;
+    border-top: 1px solid $borderColor;
 }
 
 .two-columns-container {
@@ -74,5 +123,5 @@ a:hover {
 }
 
 .field-name {
-    color: $grey;
+    color: $textLightColor;
 }

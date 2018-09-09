@@ -1,48 +1,48 @@
 @import './../../../../../sass/variables';
+@import './../../../../../sass/mixins';
 
 /* Profile header */
-.section-name {
-    grid-area: name;
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-    justify-content: flex-start;
-    border-bottom: 2px solid $green;
-}
-.section-name h4 {
-    align-self: center;
-    margin-bottom: 0;
-}
-.actions {
-    grid-area: actions;
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-    justify-content: flex-end;
-}
-.actions .btn {
-    width: 120px;
-    margin-left: 0.3em;
-}
 .profile-header {
     display: grid;
     grid-template-columns: auto 3fr;
-    grid-template-areas:
-        "name actions";
+    grid-template-areas: "name actions";
     grid-gap: 40px;
     margin-bottom: 2em;
-    border-bottom: 1px solid $lightgrey;
-}
-.profile-header > div {
-    padding-bottom: 1.5rem;
+    border-bottom: 1px solid $borderColor;
+    & > div {
+        padding-bottom: 1.5rem;
+    }
+    .section-name {
+        grid-area: name;
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: flex-start;
+        h4 {
+            align-self: center;
+            margin-bottom: 0;
+        }
+    }
+            
+    .actions {
+        grid-area: actions;
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: flex-end;
+        .btn {
+            width: 120px;
+            margin-left: 0.3em;
+        }
+    }
 }
 
 /* Profile information */
-.user-services {
-    background-color: $white;
-}
 .profile-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    .user-services {
+        background-color: #ffffff;
+    }
 }

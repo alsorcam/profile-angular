@@ -1,23 +1,25 @@
+@import './../../../../../sass/mixins';
+@import './../../../../../sass/variables';
+
 .languages-list {
     display: grid;
     grid-template-columns: 20% 20% 20% 20%;
     grid-gap: 2rem;
-}
 
-.language-details {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    flex: 1 1 0;
-}
-
-.lang-level {
-    color: grey;
-    font-size: 0.7rem;
-    font-weight: bold;
-}
-.lang-name {
-    color: black;
-    font-weight: bold;
-}
+    div {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        flex: 1 1 0;
+    }
+    .lang-level {
+        color: grey;
+        font-size: 0.7rem;
+        font-weight: bold;
+    }
+    .lang-name {
+        color: black;
+        font-weight: bold;
+    }
+}    
 

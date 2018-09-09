@@ -3,7 +3,7 @@
     <div *ngFor="let service of services">
         <label class="subtitle">{{service.service_name}}</label>
         <div *ngFor="let section of service.sections" class="section-card">
-            <div class="section-title bold" [ngClass]="{'green-text' : !section.hidden}">
+            <div class="section-title bold" [ngClass]="{'primary-color-text' : !section.hidden}">
                 <label>{{section.section_name}}</label>
                 <label class="toggle" *ngIf="!section.hidden" (click)="onClickShow(service.service_name, section.id)">
                     {{'hide' | translate}}
