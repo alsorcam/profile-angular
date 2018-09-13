@@ -125,3 +125,32 @@ a {
 .field-name {
     color: $textLightColor;
 }
+.status-item {
+    @include themify($themes) {
+        background: themed('primaryColor');
+    }
+}
+
+/* Editable info container */
+.edit-input {
+    border: none;
+    border-bottom: 1px solid #8c8c8c;
+    border-radius: 0;
+    padding: 0rem;
+    background: transparent;
+
+    &:active,
+    &:focus {
+        outline: none;
+        box-shadow: none;
+        border: none;
+        border-bottom: 1px solid #8c8c8c;
+        background: transparent;    
+    }
+}
+
+.edit-icon{
+    position: absolute;
+    top: 0.3rem;
+    right: 1rem;
+}
