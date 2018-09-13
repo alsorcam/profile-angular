@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgbProgressbarModule, NgbCollapseModule, NgbRatingModule, NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faPhone, faEnvelope, faGlobe, faVenus, faMars, faCheck, faAngleUp, faAngleDown, faCaretDown, faArrowDown, faCogs } from '@fortawesome/free-solid-svg-icons';
+import { faPhone, faEnvelope, faGlobe, faVenus, faMars, faCheck, faAngleUp, faAngleDown, faCaretDown, faArrowDown, faCogs, faPencilAlt } from '@fortawesome/free-solid-svg-icons';
 
 import { BackendService } from './../../shared/services/backend.service';
 
@@ -18,7 +18,7 @@ import { GeographicalCoverComponent } from './components/geographical-cover/geog
 import { BankAccountComponent } from './components/bank-account/bank-account.component';
 import { ServicesListComponent } from './components/services-list/services-list.component';
 
-library.add(faPhone, faEnvelope, faGlobe, faVenus, faMars, faCheck, faAngleDown, faAngleUp, faCogs);
+library.add(faPhone, faEnvelope, faGlobe, faVenus, faMars, faCheck, faAngleDown, faAngleUp, faCogs, faPencilAlt);
 
 @NgModule({
   declarations: [

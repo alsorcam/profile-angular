@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { BackendService } from './../../../../shared/services/backend.service';
 
 @Component({
@@ -8,6 +8,7 @@ import { BackendService } from './../../../../shared/services/backend.service';
 })
 export class PersonalInformationComponent implements OnInit {
     user;
+    @Input() editProfile: boolean;
 
     constructor(private backendService: BackendService) { }
 
@@ -16,6 +17,5 @@ export class PersonalInformationComponent implements OnInit {
             .subscribe(res => {
                 this.user = res;
             });
-
     }
 }

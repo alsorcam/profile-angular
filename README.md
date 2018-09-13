@@ -10,6 +10,7 @@ Profile page
 - Typescript 2.7.2
 - CSS Grid and Flexbox
 - Fake backend (mock)
+- Theming with Sass
 
 ## Installation / Setup
 
