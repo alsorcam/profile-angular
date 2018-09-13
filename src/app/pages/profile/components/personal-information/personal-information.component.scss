@@ -1,50 +1,52 @@
 @import './../../../../../sass/variables';
 @import './../../../../../sass/mixins';
 
-.photo {
-    grid-area: photo;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    img {
-        border-radius: 50%;
-        height: 200px;
-        width: 200px;
-    }
-}
-.profile-info {
-    grid-area: information;
-    display: flex;
-    flex-flow: column wrap;
-    margin-left: 1rem;
-    .user-name {
-        display: grid;
-        grid-template-columns: auto 1fr;
-        grid-gap: 3rem;
-    }
-}
-.status-item {
-    @include themify($themes) {
-        background: themed('primaryColor');
-    }
-    color: #ffffff;
-    padding: 0.3rem;
-    border-radius: 0.4rem;
-}
 .information-container {
     display: grid;
     grid-template-columns: 1fr auto auto;
     grid-template-areas: "photo information";
     padding: 1rem 0rem;
-}
-.profile-info > div {
-    margin-bottom: 0.5rem;
-}
 
-.user-years {
-    padding: 0.5rem;
-    border: 1px solid $textLightColor;
-    border-radius: 1rem;
-    padding: 0.2rem 1rem;
+    .photo {
+        grid-area: photo;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        img {
+            border-radius: 50%;
+            height: 200px;
+            width: 200px;
+        }
+    }
+
+    .profile-info {
+        grid-area: information;
+        display: flex;
+        flex-flow: column wrap;
+        margin-left: 1rem;
+        & > div {
+            margin-bottom: 0.5rem;
+        }
+        .user-name {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            grid-gap: 3rem;
+
+            .status-item {
+                @include themify($themes) {
+                    background: themed('primaryColor');
+                }
+                color: #ffffff;
+                padding: 0.3rem;
+                border-radius: 0.4rem;
+            }
+        }
+        .user-years {
+            padding: 0.5rem;
+            border: 1px solid $textLightColor;
+            border-radius: 1rem;
+            padding: 0.2rem 1rem;
+        }
+    }
 }
