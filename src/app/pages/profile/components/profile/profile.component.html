@@ -3,14 +3,13 @@
         <h4>{{'profile' | translate | uppercase}}</h4>
     </div>
     <div class="actions">
-        <button type="button" class="btn btn-outline-primary">{{'action.back' | translate}}</button>
-        <button type="button" class="btn btn-outline-primary">{{'action.edit_profile' | translate}}</button>
-        <button type="button" class="btn btn-outline-primary">{{'action.edit_offer' | translate}}</button>
+        <button type="button" class="btn btn-outline-primary" *ngIf="edit" (click)="goBack()">{{'action.back' | translate}}</button>
+        <button type="button" class="btn btn-outline-primary" *ngIf="!edit" (click)="editProfile()">{{'action.edit_profile' | translate}}</button>
     </div>
 </div>
 <div class="profile-container row">
     <div class="col-lg-6 col-xl-6 col-md-6 col-sm-12 col-12">
-        <personal-information></personal-information>
+        <personal-information [editProfile]="edit"></personal-information>
         <languages-level></languages-level>
         <profile-qualifications></profile-qualifications>
         <geographical-cover></geographical-cover>

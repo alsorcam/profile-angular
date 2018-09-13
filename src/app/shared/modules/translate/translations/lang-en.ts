@@ -18,7 +18,6 @@ export const LANG_EN_TRANS = {
     'bank_account.VAT_number': 'VAT number',
     'action.back': 'Back',
     'action.edit_profile': 'Edit profile',
-    'action.edit_offer': 'Edit offer',
     'services': 'Services',
     'yes': 'Yes',
     'no': 'No',
