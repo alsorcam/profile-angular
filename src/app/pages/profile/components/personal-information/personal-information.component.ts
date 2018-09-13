@@ -18,4 +18,9 @@ export class PersonalInformationComponent implements OnInit {
                 this.user = res;
             });
     }
+
+    changeSex(event) {
+        console.log(event);
+        console.log(this.user.sex);
+    }
 }

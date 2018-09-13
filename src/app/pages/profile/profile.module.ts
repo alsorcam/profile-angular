@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 
-import { NgbProgressbarModule, NgbCollapseModule, NgbRatingModule, NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbProgressbarModule, NgbCollapseModule, NgbRatingModule, NgbDropdownModule, NgbButtonsModule, NgbRadioGroup } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faPhone, faEnvelope, faGlobe, faVenus, faMars, faCheck, faAngleUp, faAngleDown, faCaretDown, faArrowDown, faCogs, faPencilAlt } from '@fortawesome/free-solid-svg-icons';
@@ -17,6 +17,7 @@ import { ProfileQualificationsComponent } from './components/profile-qualificati
 import { GeographicalCoverComponent } from './components/geographical-cover/geographical-cover.component';
 import { BankAccountComponent } from './components/bank-account/bank-account.component';
 import { ServicesListComponent } from './components/services-list/services-list.component';
+import { FormsModule } from '@angular/forms';
 
 library.add(faPhone, faEnvelope, faGlobe, faVenus, faMars, faCheck, faAngleDown, faAngleUp, faCogs, faPencilAlt);
 
@@ -38,7 +39,9 @@ library.add(faPhone, faEnvelope, faGlobe, faVenus, faMars, faCheck, faAngleDown,
     NgbProgressbarModule,
     NgbCollapseModule,
     NgbRatingModule,
-    NgbDropdownModule
+    NgbDropdownModule,
+    NgbButtonsModule,
+    FormsModule
   ],
   providers: [
     BackendService

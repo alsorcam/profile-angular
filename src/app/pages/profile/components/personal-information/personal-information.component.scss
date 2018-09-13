@@ -3,7 +3,7 @@
 
 .information-container {
     display: grid;
-    grid-template-columns: 1fr auto auto;
+    grid-template-columns: 1fr 2fr;
     grid-template-areas: "photo information";
     padding: 1rem 0rem;
 
@@ -24,9 +24,10 @@
         grid-area: information;
         display: flex;
         flex-flow: column wrap;
-        margin-left: 1rem;
+        margin-left: 2rem;
         & > div {
             margin-bottom: 0.5rem;
+            padding: 0;
         }
         .user-name {
             display: grid;
@@ -34,9 +35,6 @@
             grid-gap: 3rem;
 
             .status-item {
-                @include themify($themes) {
-                    background: themed('primaryColor');
-                }
                 color: #ffffff;
                 padding: 0.3rem;
                 border-radius: 0.4rem;
@@ -49,4 +47,10 @@
             padding: 0.2rem 1rem;
         }
     }
+
+    .display-inline {
+        align-items: center;
+    }
+
 }
+

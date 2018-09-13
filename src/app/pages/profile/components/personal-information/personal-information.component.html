@@ -3,7 +3,16 @@
         <img src="../../../../assets/img/profile-pic.png"/>
     </div>
     <div class="profile-info" *ngIf="user">
-        <div class="user-name">
+        <!-- Position and status -->
+        <div *ngIf="editProfile" class="col-md-12">
+            <input type="text" class="form-control edit-input" [(value)]="user.position"/>
+            <fa-icon icon="pencil-alt" class="edit-icon"></fa-icon>
+        </div>
+        <div *ngIf="editProfile" class="display-inline">
+            <div class="field-name">{{ 'personal_information.status' | translate }}:</div>
+            <input type="number" class="form-control edit-input" [(value)]="user.status"/>
+        </div>
+        <div *ngIf="!editProfile" class="user-name">
             <label class="bold larger-text">{{user.position}}</label>
             <div class="display-columns">
                 <div class="status-item small-text" *ngIf="user && user.status">
@@ -12,23 +21,51 @@
                 </div>
             </div>
         </div>
-        <div class="display-inline light-text">
+
+        <!-- Years -->
+        <div *ngIf="!editProfile" class="display-inline light-text">
             <div class="user-years">
                 <fa-icon *ngIf="user.sex == 'F'" icon="venus"></fa-icon>
                 <fa-icon *ngIf="user.sex == 'M'" icon="mars"></fa-icon>
-                {{user.years}} {{'personal_information.years' | translate}}
+                {{user.years}} {{'personal_information.years' | translate | lowercase }}
             </div>
         </div>
+        <div *ngIf="editProfile" class="display-inline">
+            <div class="field-name">{{ 'personal_information.years' | translate }}:</div>
+            <input type="number" class="form-control edit-input" [(value)]="user.years"/>
+        </div>
+        <div *ngIf="editProfile" class="col-md-12">
+            <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioUserSex" [(ngModel)]="user.sex">
+                <label ngbButtonLabel class="btn-primary">
+                    <input ngbButton type="radio" value="M">
+                    <fa-icon icon="mars"></fa-icon>
+                </label>
+                <label ngbButtonLabel class="btn-primary">
+                    <input ngbButton type="radio" value="F">
+                    <fa-icon icon="venus"></fa-icon>
+                </label>
+            </div>
+        </div>
+
+        <!-- Name -->
         <div class="bold">{{user.name}}</div>
+
+        <!-- Address -->
         <div class="light-text">{{user.address}}</div>
+        
+        <!-- Telephones -->
         <div class="display-inline" *ngIf="user.telephone">
             <fa-icon icon="phone" class="light-text"></fa-icon>
             <div *ngFor="let tel of user.telephone">{{tel}}</div>
         </div>
+        
+        <!-- Email -->
         <div class="display-inline" *ngIf="user.email">
             <fa-icon icon="envelope" class="light-text"></fa-icon>
             <div>{{user.email}}</div>
         </div>
+        
+        <!-- Webpage -->
         <div class="display-inline" *ngIf="user.web">
             <fa-icon icon="globe" class="light-text"></fa-icon>
             <a href="{{user.web}}" target="_blank">{{user.web}}</a>

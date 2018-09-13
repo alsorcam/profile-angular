@@ -1,7 +1,8 @@
 export const LANG_EN_NAME = 'en';
 export const LANG_EN_TRANS = {
     'profile': 'Profile',
-    'personal_information.years': 'years',
+    'personal_information.years': 'Years',
+    'personal_information.status': 'Status',
     'personal_information.status.1': 'Available',
     'languages': 'Languages',
     'languages.level.1': 'Advanced',
