@@ -1,8 +1,14 @@
 export const LANG_EN_NAME = 'en';
 export const LANG_EN_TRANS = {
     'profile': 'Profile',
+    'personal_information.profile_image': 'Profile image',
+    'personal_information.position': 'Position',
     'personal_information.years': 'Years',
     'personal_information.status': 'Status',
+    'personal_information.sex': 'Sex',
+    'personal_information.address': 'Address',
+    'personal_information.email': 'Email',
+    'personal_information.website': 'Web site',
     'personal_information.status.1': 'Available',
     'languages': 'Languages',
     'languages.level.1': 'Advanced',
@@ -18,6 +24,7 @@ export const LANG_EN_TRANS = {
     'bank_account.IBAN': 'IBAN',
     'bank_account.VAT_number': 'VAT number',
     'action.back': 'Back',
+    'action.upload': 'Upload',
     'action.edit_profile': 'Edit profile',
     'services': 'Services',
     'yes': 'Yes',

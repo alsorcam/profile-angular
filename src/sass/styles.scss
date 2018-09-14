@@ -154,3 +154,23 @@ a {
     top: 0.3rem;
     right: 1rem;
 }
+
+/* Button toggle */
+.btn-group.btn-group-toggle {
+    @include themify($themes) {
+        .btn-primary:not(:disabled):not(.disabled):active,
+        .btn-primary:not(:disabled):not(.disabled).active{
+            background: themed('primaryColor');
+            border-color: themed('primaryColor');
+            color: #ffffff;
+        }
+        .btn-primary {
+            background-color: #ffffff;
+            border-color: themed('primaryColor');
+            color: #343a40;
+        }
+    }
+    .btn.focus {
+        box-shadow: none;
+    }
+}

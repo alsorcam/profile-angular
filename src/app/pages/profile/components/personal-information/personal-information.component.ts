@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
 import { BackendService } from './../../../../shared/services/backend.service';
 
 @Component({
@@ -18,9 +18,9 @@ export class PersonalInformationComponent implements OnInit {
                 this.user = res;
             });
     }
-
-    changeSex(event) {
-        console.log(event);
-        console.log(this.user.sex);
+        
+    uploadImage() {
+        let inputUploadFile = document.getElementById('inputUploadFile') as HTMLElement;
+        inputUploadFile.click();
     }
 }
