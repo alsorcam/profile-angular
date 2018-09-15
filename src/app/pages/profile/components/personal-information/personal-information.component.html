@@ -34,7 +34,7 @@
         <!-- Telephones -->
         <div class="display-inline" *ngIf="user.telephone">
             <fa-icon icon="phone" class="light-text"></fa-icon>
-            <div *ngFor="let tel of user.telephone">{{tel}}</div>
+            <div>{{user.telephone}}</div>
         </div>
         
         <!-- Email -->
@@ -100,6 +100,13 @@
         <!-- Address -->
         <div class="field-name">{{'personal_information.address' | translate}}:</div>
         <input type="text" class="form-control edit-input" [(ngModel)]="user.address"/>
+
+        <!-- Telephones -->
+        <div class="field-name">{{'personal_information.telephone' | translate}}:</div>
+        <div>
+            <input type="text" class="form-control edit-input" [(ngModel)]="user.telephone" (change)="changeTelephone()"/>
+            <label *ngIf="invalidTelephone" class="label--error">{{'error.telephone' | translate}}</label>
+        </div>
 
         <!-- Email -->
         <div class="field-name">{{'personal_information.email' | translate}}:</div>

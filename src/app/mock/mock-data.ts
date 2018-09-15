@@ -8,10 +8,7 @@ export class MockData {
             years: 68,
             sex: 'M',
             address: 'Old Country Street, 21',
-            telephone: [
-                '+34658995566',
-                '+41555555555'
-            ],
+            telephone: '+34658995566',
             email: 'johnsmith@mail.com',
             web: 'http://www.profile.com'
         }

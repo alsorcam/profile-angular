@@ -8,6 +8,7 @@ import { BackendService } from './../../../../shared/services/backend.service';
 })
 export class PersonalInformationComponent implements OnInit {
     user;
+    invalidTelephone: boolean = false;
     @Input() editProfile: boolean;
 
     constructor(private backendService: BackendService) { }
@@ -22,5 +23,14 @@ export class PersonalInformationComponent implements OnInit {
     uploadImage() {
         let inputUploadFile = document.getElementById('inputUploadFile') as HTMLElement;
         inputUploadFile.click();
+    }
+
+    changeTelephone() {
+        let re = new RegExp(/[+]\d{11}$/g);
+        if (re.test(this.user.telephone)) {
+            this.invalidTelephone = false;            
+        } else {
+            this.invalidTelephone = true;
+        }
     }
 }
