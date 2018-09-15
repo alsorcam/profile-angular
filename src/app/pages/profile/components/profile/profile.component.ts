@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class ProfileComponent {
 
-    edit: boolean = true;
+    edit: boolean = false;
 
     editProfile() {
         this.edit = true;

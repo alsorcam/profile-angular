@@ -104,14 +104,14 @@
         <!-- Telephones -->
         <div class="field-name">{{'personal_information.telephone' | translate}}:</div>
         <div>
-            <input type="text" class="form-control edit-input" [(ngModel)]="user.telephone" (change)="changeTelephone()"/>
+            <input type="text" class="form-control edit-input" [(ngModel)]="user.telephone" (change)="validateTelephone()"/>
             <label *ngIf="invalidTelephone" class="label--error">{{'error.telephone' | translate}}</label>
         </div>
 
         <!-- Email -->
         <div class="field-name">{{'personal_information.email' | translate}}:</div>
         <div>
-            <input type="text" class="form-control edit-input" [(ngModel)]="user.email" (change)="changeEmail()"/>
+            <input type="text" class="form-control edit-input" [(ngModel)]="user.email" (change)="validateEmail()"/>
             <label *ngIf="invalidEmail" class="label--error">{{'error.email' | translate}}</label>
         </div>
         <!-- Address -->

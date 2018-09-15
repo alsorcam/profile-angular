@@ -18,6 +18,8 @@ export class PersonalInformationComponent implements OnInit {
         this.backendService.getUser(1)
             .subscribe(res => {
                 this.user = res;
+                this.validateTelephone();
+                this.validateEmail();
             });
     }
         
@@ -26,7 +28,7 @@ export class PersonalInformationComponent implements OnInit {
         inputUploadFile.click();
     }
 
-    changeTelephone() {
+    validateTelephone() {
         let re = new RegExp(/[+]\d{11}$/g);
         if (re.test(this.user.telephone)) {
             this.invalidTelephone = false;            
@@ -35,7 +37,7 @@ export class PersonalInformationComponent implements OnInit {
         }
     }
 
-    changeEmail() {
+    validateEmail() {
         let re = new RegExp(/^[A-Za-z0-9._-]+@[A-Za-z0-9]+\.[a-z]{2,}$/g);
         if (re.test(this.user.email)) {
             this.invalidEmail = false;            
