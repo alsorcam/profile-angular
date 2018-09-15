@@ -5,12 +5,13 @@ Profile page
 ## Characteristics
 
 - Angular 6.1.5
-- Sass
-- Bootstrap 4.1.3
 - Typescript 2.7.2
-- CSS Grid and Flexbox
 - Fake backend (mock)
+- Bootstrap 4.1.3
+- Bootstrap for Angular
+- Sass
 - Theming with Sass
+- CSS Grid and Flexbox
 
 ## Installation / Setup
 
