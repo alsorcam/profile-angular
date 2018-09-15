@@ -131,6 +131,10 @@ a {
     }
 }
 
+.status-item.status-inactive {
+    background: #dc3232;
+}
+
 /* Editable info container */
 .edit-input {
     border: none;

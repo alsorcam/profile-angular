@@ -53,20 +53,28 @@
     }
 }
 
-.two-columns-container {
-    grid-template-columns: 30% 70%;
 
-    .btn-upload {
-        padding: 0;
-        width: 8rem;
-    }
+.wrapper {
+    border-top: none;
+    .two-columns-container {
+        grid-template-columns: 30% 70%;
+    
+        .btn-upload {
+            padding: 0;
+            width: 8rem;
+        }
+    
+        input[type="file"] {
+            width: 0.1px;
+            height: 0.1px;
+            opacity: 0;
+            overflow: hidden;
+            position: absolute;
+            z-index: -1;
+        }
 
-    input[type="file"] {
-        width: 0.1px;
-        height: 0.1px;
-        opacity: 0;
-        overflow: hidden;
-        position: absolute;
-        z-index: -1;
+        .field-name {
+            align-self: center;
+        }
     }
 }

@@ -7,13 +7,14 @@
         <div class="user-name">
             <label class="bold larger-text">{{user.position}}</label>
             <div class="display-columns">
-                <div class="status-item small-text" *ngIf="user && user.status">
-                    <fa-icon icon="check"></fa-icon>
-                    <div>{{'personal_information.status.' + user.status | translate}}</div>
+                <div class="status-item small-text" *ngIf="user && user.available !== undefined"
+                    [ngClass]="{'status-inactive' : user.available === 'N'}">
+                    <fa-icon icon="check" *ngIf="user.available === 'Y'"></fa-icon>
+                    <fa-icon icon="times" *ngIf="user.available === 'N'"></fa-icon>
+                    <div>{{'personal_information.available.' + user.available | translate}}</div>
                 </div>  
             </div>
         </div>
-
 
         <!-- Years -->
         <div class="display-inline light-text">
@@ -59,15 +60,27 @@
 
         <!-- Position -->
         <div class="field-name">{{'personal_information.position' | translate}}:</div>
-        <input type="text" class="form-control edit-input" [(value)]="user.position"/>
+        <input type="text" class="form-control edit-input" [(ngModel)]="user.position"/>
 
         <!-- Status -->
-        <div class="field-name">{{'personal_information.status' | translate}}:</div>
-        <input type="number" class="form-control edit-input" [(value)]="user.status"/>
+        <div class="field-name">{{'personal_information.availability' | translate}}:</div>
+        <div class="field-input">
+            <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioUserAvailability"
+                [(ngModel)]="user.available">
+                <label ngbButtonLabel class="btn-primary">
+                    <input ngbButton type="radio" value="Y">
+                    {{'yes' | translate}}
+                </label>
+                <label ngbButtonLabel class="btn-primary">
+                    <input ngbButton type="radio" value="N">
+                    {{'no' | translate}}
+                </label>
+            </div>
+        </div>
 
         <!-- Years -->
         <div class="field-name">{{'personal_information.years' | translate}}:</div>
-        <input type="number" class="form-control edit-input" [(value)]="user.years"/>
+        <input type="number" class="form-control edit-input" [(ngModel)]="user.years"/>
 
         <!-- Sex -->
         <div class="field-name">{{'personal_information.sex' | translate}}:</div>
@@ -86,14 +99,14 @@
 
         <!-- Address -->
         <div class="field-name">{{'personal_information.address' | translate}}:</div>
-        <input type="text" class="form-control edit-input" [(value)]="user.address"/>
+        <input type="text" class="form-control edit-input" [(ngModel)]="user.address"/>
 
         <!-- Email -->
         <div class="field-name">{{'personal_information.email' | translate}}:</div>
-        <input type="text" class="form-control edit-input" [(value)]="user.email"/>
+        <input type="text" class="form-control edit-input" [(ngModel)]="user.email"/>
 
         <!-- Address -->
         <div class="field-name">{{'personal_information.website' | translate}}:</div>
-        <input type="text" class="form-control edit-input" [(value)]="user.web"/>
+        <input type="text" class="form-control edit-input" [(ngModel)]="user.web"/>
     </div>
 </div>

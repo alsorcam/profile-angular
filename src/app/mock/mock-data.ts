@@ -4,7 +4,7 @@ export class MockData {
             id: 1,
             position: 'Prof. John Smith',
             name: 'John F. Smith',
-            status: 1,
+            available: 'Y',
             years: 68,
             sex: 'M',
             address: 'Old Country Street, 21',
