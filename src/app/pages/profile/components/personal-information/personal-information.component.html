@@ -110,8 +110,10 @@
 
         <!-- Email -->
         <div class="field-name">{{'personal_information.email' | translate}}:</div>
-        <input type="text" class="form-control edit-input" [(ngModel)]="user.email"/>
-
+        <div>
+            <input type="text" class="form-control edit-input" [(ngModel)]="user.email" (change)="changeEmail()"/>
+            <label *ngIf="invalidEmail" class="label--error">{{'error.email' | translate}}</label>
+        </div>
         <!-- Address -->
         <div class="field-name">{{'personal_information.website' | translate}}:</div>
         <input type="text" class="form-control edit-input" [(ngModel)]="user.web"/>

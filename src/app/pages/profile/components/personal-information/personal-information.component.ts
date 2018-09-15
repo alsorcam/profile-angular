@@ -9,6 +9,7 @@ import { BackendService } from './../../../../shared/services/backend.service';
 export class PersonalInformationComponent implements OnInit {
     user;
     invalidTelephone: boolean = false;
+    invalidEmail: boolean = false;
     @Input() editProfile: boolean;
 
     constructor(private backendService: BackendService) { }
@@ -31,6 +32,15 @@ export class PersonalInformationComponent implements OnInit {
             this.invalidTelephone = false;            
         } else {
             this.invalidTelephone = true;
+        }
+    }
+
+    changeEmail() {
+        let re = new RegExp(/^[A-Za-z0-9._-]+@[A-Za-z0-9]+\.[a-z]{2,}$/g);
+        if (re.test(this.user.email)) {
+            this.invalidEmail = false;            
+        } else {
+            this.invalidEmail = true;
         }
     }
 }

@@ -44,5 +44,6 @@ export const LANG_EN_TRANS = {
     'footer.copyright': 'Copyright © 2018 COMPANY',
     'placeholder.fee': 'Fee',
     'placeholder.rate': '35 CHF per hour',
-    'error.telephone': 'Please, check the telephone/s format'
+    'error.telephone': 'Please, check the telephone\'s format',
+    'error.email': 'Please, check the email\'s format'
 };
