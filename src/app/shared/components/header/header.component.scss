@@ -29,6 +29,9 @@
                 fa-icon {
                     margin-right: 0.3rem;
                 }
+                &:hover {
+                    cursor: pointer;
+                }
             }
         }
     }

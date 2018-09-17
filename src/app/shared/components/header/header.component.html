@@ -16,6 +16,13 @@
                 <fa-icon icon="circle" class="primary-color-text" [ngStyle]="{color: theme.code}"></fa-icon>
                 {{'theme.' + theme.name | translate }}
             </button>
+            <label>{{'header.language' | translate }}</label>
+            <button class="dropdown-item" (click)="selectLanguage('en')">
+                {{'lang.en' | translate }}
+            </button>
+            <button class="dropdown-item" (click)="selectLanguage('es')">
+                {{'lang.es' | translate }}
+            </button>
         </div>
     </div>
 </header>

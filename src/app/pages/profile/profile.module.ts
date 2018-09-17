@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { TranslateModule } from '@ngx-translate/core';
 
 import { NgbProgressbarModule, NgbCollapseModule, NgbRatingModule, NgbDropdownModule, NgbButtonsModule, NgbRadioGroup } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -9,7 +10,6 @@ import { faPhone, faEnvelope, faGlobe, faVenus, faMars, faCheck, faAngleUp, faAn
 
 import { BackendService } from './../../shared/services/backend.service';
 
-import { TranslateModule } from './../../shared/modules/translate/translate.module';
 import { ProfileComponent } from './components/profile/profile.component';
 import { PersonalInformationComponent } from './components/personal-information/personal-information.component';
 import { LanguagesLevelComponent } from './components/languages-level/languages-level.component';

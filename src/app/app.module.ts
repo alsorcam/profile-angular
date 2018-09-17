@@ -1,10 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { fakeBackendProvider } from './mock/mock-backend';
-import { TranslateModule } from './shared/modules/translate/translate.module';
 import { ProfileModule } from './pages/profile/profile.module';
 
 import { AppComponent } from './app.component';
@@ -13,7 +12,15 @@ import { FooterComponent } from './shared/components/footer/footer.component';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faBolt, faCircle } from '@fortawesome/free-solid-svg-icons';
+import { faCircle, faBolt } from '@fortawesome/free-solid-svg-icons';
+
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
+// AoT requires an exported function for factories
+export function HttpLoaderFactory(http: HttpClient) {
+    return new TranslateHttpLoader(http);
+}
 
 library.add(faBolt, faCircle);
 
@@ -26,10 +33,16 @@ library.add(faBolt, faCircle);
   imports: [
     BrowserModule,
     HttpClientModule,
-    TranslateModule.forRoot(),
     ProfileModule,
     FontAwesomeModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    TranslateModule.forRoot({
+      loader: {
+          provide: TranslateLoader,
+          useFactory: HttpLoaderFactory,
+          deps: [HttpClient]
+      }
+  })
   ],
   providers: [
     fakeBackendProvider

@@ -11,6 +11,7 @@ Profile page
 - Bootstrap for Angular
 - Sass
 - Theming with Sass
+- Language change with ngx-translate
 - CSS Grid and Flexbox
 
 ## Installation / Setup
