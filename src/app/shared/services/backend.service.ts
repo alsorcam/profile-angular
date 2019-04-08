@@ -6,31 +6,31 @@ import { Properties } from './../utils/properties';
 
 @Injectable()
 export class BackendService {
-    ENDPOINT = Properties.BACKEND_SERVICES_ENDPOINT;
+  ENDPOINT = Properties.BACKEND_SERVICES_ENDPOINT;
 
-    constructor(private http: HttpClient) { }
+  constructor(private readonly http: HttpClient) { }
 
-    getUser(user_id: number): Observable<any> {
-        return this.http.get(this.ENDPOINT + '/users/' + user_id);
-    }
+  getUser(userId: number): Observable<any> {
+    return this.http.get(`${this.ENDPOINT}/users/${userId}`);
+  }
 
-    getUserLanguages(user_id: number): Observable<any[]> {
-        return this.http.get<any[]>(this.ENDPOINT + '/users/' + user_id + '/languages');
-    }
+  getUserLanguages(userId: number): Observable<any[]> {
+    return this.http.get<any[]>(`${this.ENDPOINT}/users/${userId}/languages`);
+  }
 
-    getUserQualifications(user_id: number): Observable<any> {
-        return this.http.get(this.ENDPOINT + '/users/' + user_id + '/qualifications');
-    }
+  getUserQualifications(userId: number): Observable<any> {
+    return this.http.get(`${this.ENDPOINT}/users/${userId}/qualifications`);
+  }
 
-    getUserGeographicalCover(user_id: number): Observable<any> {
-        return this.http.get(this.ENDPOINT + '/users/' + user_id + '/geographical-cover');
-    }
+  getUserGeographicalCover(userId: number): Observable<any> {
+    return this.http.get(`${this.ENDPOINT}/users/${userId}/geographical-cover`);
+  }
 
-    getUserBankAccount(user_id: number): Observable<any> {
-        return this.http.get(this.ENDPOINT + '/users/' + user_id + '/bank-account');
-    }
+  getUserBankAccount(userId: number): Observable<any> {
+    return this.http.get(`${this.ENDPOINT}/users/${userId}/bank-account`);
+  }
 
-    getUserServices(user_id: number): Observable<any[]> {
-        return this.http.get<any[]>(this.ENDPOINT + '/users/' + user_id + '/services');
-    }
+  getUserServices(userId: number): Observable<any[]> {
+    return this.http.get<any[]>(`${this.ENDPOINT}/users/${userId}/services`);
+  }
 }

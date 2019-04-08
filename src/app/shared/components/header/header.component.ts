@@ -12,7 +12,7 @@ export class HeaderComponent {
 
   @Output() changeTheme: EventEmitter<any> = new EventEmitter();
 
-  constructor(private translate: TranslateService) {
+  constructor(private readonly translate: TranslateService) {
     this.colorThemes = Properties.COLOR_THEMES;
   }
 
