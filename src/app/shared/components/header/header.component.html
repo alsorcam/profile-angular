@@ -1,4 +1,4 @@
-<header class="header-container row">
+<header id="headerContainer" class="d-flex justify-content-between mt-3">
     <div class="logo">
         <h3>
             <fa-icon icon="bolt" class="primary-color-text"></fa-icon>
@@ -8,15 +8,15 @@
     <div ngbDropdown class="dropdown d-inline-block">
         <div id="dropdownSettings" ngbDropdownToggle>
             <fa-icon icon="cogs" class="primary-color-text"></fa-icon>
-            <a>{{'header.settings' | translate }}</a>
+            <a class="ml-3">{{'header.settings' | translate }}</a>
         </div>
         <div class="dropdown-list" ngbDropdownMenu aria-labelledby="dropdownSettings">
-            <label>{{'header.themes' | translate }}</label>
+            <label class="pl-2">{{'header.themes' | translate }}</label>
             <button *ngFor="let theme of colorThemes" class="dropdown-item" (click)="selectTheme(theme.name)">
-                <fa-icon icon="circle" class="primary-color-text" [ngStyle]="{color: theme.code}"></fa-icon>
+                <fa-icon icon="circle" class="primary-color-text mr-2" [ngStyle]="{color: theme.code}"></fa-icon>
                 {{'theme.' + theme.name | translate }}
             </button>
-            <label>{{'header.language' | translate }}</label>
+            <label class="pl-2">{{'header.language' | translate }}</label>
             <button class="dropdown-item" (click)="selectLanguage('en')">
                 {{'lang.en' | translate }}
             </button>

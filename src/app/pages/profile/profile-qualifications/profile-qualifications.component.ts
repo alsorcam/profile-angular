@@ -3,8 +3,7 @@ import { BackendService } from '../../../shared/services/backend.service';
 
 @Component({
   selector: 'profile-qualifications',
-  templateUrl: 'profile-qualifications.component.html',
-  styleUrls: ['profile-qualifications.component.scss']
+  templateUrl: 'profile-qualifications.component.html'
 })
 export class ProfileQualificationsComponent implements OnInit {
   qualifications;

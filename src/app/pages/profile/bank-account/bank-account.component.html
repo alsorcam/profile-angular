@@ -1,15 +1,15 @@
-<div class="wrapper">
+<div class="py-3 px-0 border-top">
     <div class="bank-account-container">
         <h5 class="subtitle">{{'bank_account' | translate | uppercase}}</h5>
         <div *ngIf="bankAccount" class="two-columns-container">
             <!-- Owner -->
-            <div class="field-name">{{'bank_account.owner' | translate}}:</div>
+            <div class="text-secondary align-self-center">{{'bank_account.owner' | translate}}:</div>
             <div>{{bankAccount.owner}}</div>
             <!-- IBAN -->
-            <div class="field-name">{{'bank_account.IBAN' | translate}}:</div>
+            <div class="text-secondary align-self-center">{{'bank_account.IBAN' | translate}}:</div>
             <div>{{bankAccount.IBAN}}</div>
             <!-- VAT number -->
-            <div class="field-name">{{'bank_account.VAT_number' | translate}}:</div>
+            <div class="text-secondary align-self-center">{{'bank_account.VAT_number' | translate}}:</div>
             <div>{{bankAccount.VAT_number}}</div>
         </div>
     </div>

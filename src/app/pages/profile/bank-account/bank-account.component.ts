@@ -3,8 +3,7 @@ import { BackendService } from '../../../shared/services/backend.service';
 
 @Component({
   selector: 'bank-account',
-  templateUrl: 'bank-account.component.html',
-  styleUrls: ['bank-account.component.scss']
+  templateUrl: 'bank-account.component.html'
 })
 export class BankAccountComponent implements OnInit {
   bankAccount;

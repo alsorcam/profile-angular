@@ -1,121 +1,123 @@
-<div class="information-container" *ngIf="!editProfile">
-    <div class="photo">
-        <img src="../../../../assets/img/profile-pic.png"/>
+<div id="informationContainer" *ngIf="!editProfile">
+  <div id="photoContainer" class="d-flex justify-content-start align-items-center">
+    <img src="../../../assets/img/profile-pic.png"/>
+  </div>
+  <div id="profileInfo" *ngIf="user" class="d-flex flex-column flex-wrap ml-4">
+    <!-- Position and status -->
+    <div id="userName" class="mb-1 p-0">
+      <label class="font-weight-bold larger-text">{{user.position}}</label>
+      <!-- <div class="display-columns"> -->
+      <div class="d-flex flex-column justify-content-start align-content-start align-items-center text-center">
+        <div id="statusItem" class="rounded p-1 text-white small-text" *ngIf="user && user.available !== undefined"
+          [ngClass]="{'bg-danger' : user.available === 'N'}">
+          <fa-icon icon="check" *ngIf="user.available === 'Y'"></fa-icon>
+          <fa-icon icon="times" *ngIf="user.available === 'N'"></fa-icon>
+          <div>{{'personal_information.available.' + user.available | translate}}</div>
+        </div>  
+      </div>
     </div>
-    <div class="profile-info" *ngIf="user">
-        <!-- Position and status -->
-        <div class="user-name">
-            <label class="bold larger-text">{{user.position}}</label>
-            <div class="display-columns">
-                <div class="status-item small-text" *ngIf="user && user.available !== undefined"
-                    [ngClass]="{'status-inactive' : user.available === 'N'}">
-                    <fa-icon icon="check" *ngIf="user.available === 'Y'"></fa-icon>
-                    <fa-icon icon="times" *ngIf="user.available === 'N'"></fa-icon>
-                    <div>{{'personal_information.available.' + user.available | translate}}</div>
-                </div>  
-            </div>
-        </div>
 
-        <!-- Years -->
-        <div class="display-inline light-text">
-            <div class="user-years">
-                <fa-icon *ngIf="user.sex == 'F'" icon="venus"></fa-icon>
-                <fa-icon *ngIf="user.sex == 'M'" icon="mars"></fa-icon>
-                {{user.years}} {{'personal_information.years' | translate | lowercase }}
-            </div>
-        </div>
-
-        <!-- Name -->
-        <div class="bold">{{user.name}}</div>
-
-        <!-- Address -->
-        <div class="light-text">{{user.address}}</div>
-        
-        <!-- Telephones -->
-        <div class="display-inline" *ngIf="user.telephone">
-            <fa-icon icon="phone" class="light-text"></fa-icon>
-            <div>{{user.telephone}}</div>
-        </div>
-        
-        <!-- Email -->
-        <div class="display-inline">
-            <fa-icon icon="envelope" class="light-text"></fa-icon>
-            <div>{{user.email}}</div>
-        </div>
-        
-        <!-- Webpage -->
-        <div class="display-inline">
-            <fa-icon icon="globe" class="light-text"></fa-icon>
-            <a href="{{user.web}}" target="_blank">{{user.web}}</a>
-        </div>
+    <!-- Years -->
+    <div class="d-flex align-items-center text-black-50 mb-1 p-0">
+      <div class="px-2 py-1 border rounded-pill border-secondary">
+        <fa-icon *ngIf="user.sex == 'F'" icon="venus"></fa-icon>
+        <fa-icon *ngIf="user.sex == 'M'" icon="mars"></fa-icon>
+        {{user.years}} {{'personal_information.years' | translate | lowercase }}
+      </div>
     </div>
+
+    <!-- Name -->
+    <div class="font-weight-bold mb-1 p-0">{{user.name}}</div>
+
+    <!-- Address -->
+    <div class="text-black-50 mb-1 p-0">{{user.address}}</div>
+    
+    <!-- Telephones -->
+    <div class="d-flex align-items-center mb-1 p-0" *ngIf="user.telephone">
+      <fa-icon icon="phone" class="text-black-50 mr-2"></fa-icon>
+      <div>{{user.telephone}}</div>
+    </div>
+    
+    <!-- Email -->
+    <div class="d-flex align-items-center mb-1 p-0">
+      <fa-icon icon="envelope" class="text-black-50 mr-2"></fa-icon>
+      <div>{{user.email}}</div>
+    </div>
+    
+    <!-- Webpage -->
+    <div class="d-flex align-items-center mb-1 p-0">
+      <fa-icon icon="globe" class="text-black-50 mr-2"></fa-icon>
+      <a href="{{user.web}}" target="_blank">{{user.web}}</a>
+    </div>
+  </div>
 </div>
 
-<div class="wrapper" *ngIf="editProfile && user">
-    <div class="two-columns-container">
-        <!-- Profile image -->
-        <div class="field-name">{{'personal_information.profile_image' | translate}}:</div>
-        <button type="button" class="btn btn-outline-primary btn-upload" (click)="uploadImage()">{{'action.upload' | translate}}</button>
-        <input id="inputUploadFile" type="file">
+<div class="wrapper py-3 px-0" *ngIf="editProfile && user">
+  <div class="two-columns-container">
+    <!-- Profile image -->
+    <div class="text-secondary align-self-center">{{'personal_information.profile_image' | translate}}:</div>
+    <button type="button" class="btn btn-outline-primary p-0 w-25" (click)="uploadImage()">{{'action.upload' | translate}}</button>
+    <input id="inputUploadFile" type="file">
 
-        <!-- Position -->
-        <div class="field-name">{{'personal_information.position' | translate}}:</div>
-        <input type="text" class="form-control edit-input" [(ngModel)]="user.position"/>
+    <!-- Position -->
+    <div class="text-secondary align-self-center">{{'personal_information.position' | translate}}:</div>
+    <input type="text" class="form-control edit-input" [(ngModel)]="user.position"/>
 
-        <!-- Status -->
-        <div class="field-name">{{'personal_information.availability' | translate}}:</div>
-        <div class="field-input">
-            <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioUserAvailability"
-                [(ngModel)]="user.available">
-                <label ngbButtonLabel class="btn-primary">
-                    <input ngbButton type="radio" value="Y">
-                    {{'yes' | translate}}
-                </label>
-                <label ngbButtonLabel class="btn-primary">
-                    <input ngbButton type="radio" value="N">
-                    {{'no' | translate}}
-                </label>
-            </div>
-        </div>
-
-        <!-- Years -->
-        <div class="field-name">{{'personal_information.years' | translate}}:</div>
-        <input type="number" class="form-control edit-input" [(ngModel)]="user.years"/>
-
-        <!-- Sex -->
-        <div class="field-name">{{'personal_information.sex' | translate}}:</div>
-        <div class="field-input">
-            <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioUserSex" [(ngModel)]="user.sex">
-                <label ngbButtonLabel class="btn-primary">
-                    <input ngbButton type="radio" value="M">
-                    <fa-icon icon="mars"></fa-icon>
-                </label>
-                <label ngbButtonLabel class="btn-primary">
-                    <input ngbButton type="radio" value="F">
-                    <fa-icon icon="venus"></fa-icon>
-                </label>
-            </div>
-        </div>
-
-        <!-- Address -->
-        <div class="field-name">{{'personal_information.address' | translate}}:</div>
-        <input type="text" class="form-control edit-input" [(ngModel)]="user.address"/>
-
-        <!-- Telephones -->
-        <div class="field-name">{{'personal_information.telephone' | translate}}:</div>
-        <div>
-            <input type="text" class="form-control edit-input" [(ngModel)]="user.telephone" (change)="validateTelephone()"/>
-            <label *ngIf="invalidTelephone" class="label--error">{{'error.telephone' | translate}}</label>
-        </div>
-
-        <!-- Email -->
-        <div class="field-name">{{'personal_information.email' | translate}}:</div>
-        <div>
-            <input type="text" class="form-control edit-input" [(ngModel)]="user.email" (change)="validateEmail()"/>
-            <label *ngIf="invalidEmail" class="label--error">{{'error.email' | translate}}</label>
-        </div>
-        <!-- Address -->
-        <div class="field-name">{{'personal_information.website' | translate}}:</div>
-        <input type="text" class="form-control edit-input" [(ngModel)]="user.web"/>
+    <!-- Status -->
+    <div class="text-secondary align-self-center">{{'personal_information.availability' | translate}}:</div>
+    <div class="field-input">
+      <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioUserAvailability"
+        [(ngModel)]="user.available">
+        <label ngbButtonLabel class="btn-primary">
+          <input ngbButton type="radio" value="Y">
+          {{'yes' | translate}}
+        </label>
+        <label ngbButtonLabel class="btn-primary">
+          <input ngbButton type="radio" value="N">
+          {{'no' | translate}}
+        </label>
+      </div>
     </div>
+
+    <!-- Years -->
+    <div class="text-secondary align-self-center">{{'personal_information.years' | translate}}:</div>
+    <input type="number" class="form-control edit-input" [(ngModel)]="user.years"/>
+
+    <!-- Sex -->
+    <div class="text-secondary align-self-center">{{'personal_information.sex' | translate}}:</div>
+    <div class="field-input">
+      <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioUserSex" [(ngModel)]="user.sex">
+        <label ngbButtonLabel class="btn-primary">
+          <input ngbButton type="radio" value="M">
+          <fa-icon icon="mars"></fa-icon>
+        </label>
+        <label ngbButtonLabel class="btn-primary">
+          <input ngbButton type="radio" value="F">
+          <fa-icon icon="venus"></fa-icon>
+        </label>
+      </div>
+    </div>
+
+    <!-- Address -->
+    <div class="text-secondary align-self-center">{{'personal_information.address' | translate}}:</div>
+    <input type="text" class="form-control edit-input" [(ngModel)]="user.address"/>
+
+    <!-- Telephones -->
+    <div class="text-secondary align-self-center">{{'personal_information.telephone' | translate}}:</div>
+    <div>
+      <input type="text" class="form-control edit-input" [(ngModel)]="user.telephone" (change)="validateTelephone()"/>
+      <label *ngIf="invalidTelephone" class="text-danger">{{'error.telephone' | translate}}</label>
+    </div>
+
+    <!-- Email -->
+    <div class="text-secondary align-self-center">{{'personal_information.email' | translate}}:</div>
+    <div>
+      <input type="text" class="form-control edit-input" [(ngModel)]="user.email" (change)="validateEmail()"/>
+      <label *ngIf="invalidEmail" class="text-danger">{{'error.email' | translate}}</label>
+    </div>
+  
+    <!-- Address -->
+    <div class="text-secondary align-self-center">{{'personal_information.website' | translate}}:</div>
+    <input type="text" class="form-control edit-input" [(ngModel)]="user.web"/>
+  </div>
 </div>

@@ -3,8 +3,7 @@ import { BackendService } from '../../../shared/services/backend.service';
 
 @Component({
 	selector: 'geographical-cover',
-	templateUrl: 'geographical-cover.component.html',
-	styleUrls: ['geographical-cover.component.scss']
+	templateUrl: 'geographical-cover.component.html'
 })
 export class GeographicalCoverComponent implements OnInit {
 	geographicalCover;

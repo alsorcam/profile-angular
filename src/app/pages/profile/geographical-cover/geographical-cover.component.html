@@ -2,7 +2,7 @@
     <div class="geographical-cover-container">
         <h5 class="subtitle">{{'geographical_cover' | translate | uppercase}}</h5>
         <div *ngIf="geographicalCover" class="two-columns-container">
-            <div class="field-name">{{'geographical_cover' | translate}}:</div>
+            <div class="text-secondary align-self-center">{{'geographical_cover' | translate}}:</div>
             <div><label *ngFor="let geo of geographicalCover.geographical_cover">{{geo}}</label></div>
         </div>
     </div>
