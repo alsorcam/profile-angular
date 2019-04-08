@@ -3,8 +3,8 @@
         <h4 class="align-self-center mb-0">{{'profile' | translate | uppercase}}</h4>
     </div>
     <div id="actions" class="d-flex align-items-center justify-content-end flex-wrap pb-3">
-        <button type="button" class="btn btn-outline-primary ml-1" *ngIf="edit" (click)="goBack()">{{'action.back' | translate}}</button>
-        <button type="button" class="btn btn-outline-primary ml-1" *ngIf="!edit" (click)="editProfile()">{{'action.edit_profile' | translate}}</button>
+        <button id="backBtn" type="button" class="btn btn-outline-primary ml-1" *ngIf="edit" (click)="goBack()">{{'action.back' | translate}}</button>
+        <button id="editBtn" type="button" class="btn btn-outline-primary ml-1" *ngIf="!edit" (click)="editProfile()">{{'action.edit_profile' | translate}}</button>
     </div>
 </div>
 <div id ="profileContainer" class="row d-flex justify-content-between">

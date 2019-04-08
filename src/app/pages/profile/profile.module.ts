@@ -11,7 +11,7 @@ import { faPhone, faEnvelope, faGlobe, faVenus, faMars, faCheck, faAngleUp, faAn
 
 import { BackendService } from './../../shared/services/backend.service';
 
-import { ProfileComponent } from './profile/profile.component';
+import { ProfileComponent } from './profile.component';
 import { PersonalInformationComponent } from './personal-information/personal-information.component';
 import { LanguagesLevelComponent } from './languages-level/languages-level.component';
 import { ProfileQualificationsComponent } from './profile-qualifications/profile-qualifications.component';
