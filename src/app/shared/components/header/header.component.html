@@ -12,7 +12,7 @@
         </div>
         <div class="dropdown-list" ngbDropdownMenu aria-labelledby="dropdownSettings">
             <label class="pl-2">{{'header.themes' | translate }}</label>
-            <button *ngFor="let theme of colorThemes" class="dropdown-item" (click)="selectTheme(theme.name)">
+            <button *ngFor="let theme of colorThemes" class="dropdown-item" (click)="themeSelected(theme.name)">
                 <fa-icon icon="circle" class="primary-color-text mr-2" [ngStyle]="{color: theme.code}"></fa-icon>
                 {{'theme.' + theme.name | translate }}
             </button>

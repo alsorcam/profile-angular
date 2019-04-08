@@ -10,14 +10,14 @@ import { TranslateService } from '@ngx-translate/core';
 export class HeaderComponent {
   colorThemes: any[];
 
-  @Output() changeTheme: EventEmitter<any> = new EventEmitter();
+  @Output() onThemeChanged: EventEmitter<any> = new EventEmitter();
 
   constructor(private readonly translate: TranslateService) {
     this.colorThemes = Properties.COLOR_THEMES;
   }
 
-  selectTheme(color: string) {
-    this.changeTheme.emit(color);
+  themeSelected(color: string) {
+    this.onThemeChanged.emit(color);
   }
 
   selectLanguage(lang: string) {

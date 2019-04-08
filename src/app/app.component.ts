@@ -18,7 +18,7 @@ export class AppComponent {
     translate.use('en');
   }
 
-  changeTheme(event: any) {
+  themeChanged(event: any) {
     this.selectedTheme = event;
   }
 
