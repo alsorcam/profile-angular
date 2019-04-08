@@ -9,7 +9,7 @@
       <!-- <div class="display-columns"> -->
       <div class="d-flex flex-column justify-content-start align-content-start align-items-center text-center">
         <div id="statusItem" class="rounded p-1 text-white small-text" *ngIf="user && user.available !== undefined"
-          [ngClass]="{'bg-danger' : user.available === 'N'}">
+          [ngClass]="user.available === 'N' ? 'bg-danger' : 'bg-success'">
           <fa-icon icon="check" *ngIf="user.available === 'Y'"></fa-icon>
           <fa-icon icon="times" *ngIf="user.available === 'N'"></fa-icon>
           <div>{{'personal_information.available.' + user.available | translate}}</div>

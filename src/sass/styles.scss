@@ -1,14 +1,14 @@
-@import './variables';
-@import './mixins';
+@import 'variables';
+@import 'mixins';
 @import "~bootstrap/scss/bootstrap.scss";
 @import  'grid', 'dropdown';
 
  /* Override styles */
 a {
   @include themify($themes) {
-    color: themed('primaryColor'); 
+    color: themed('primary'); 
     &:hover {
-      color: themed('primaryDarkColor'); 
+      color: themed('primary-dark'); 
     }
   }
 }
@@ -22,11 +22,11 @@ a {
   box-shadow:none;
   outline: none;
   @include themify($themes) {
-    color: themed('primaryColor');
-    border-color: themed('primaryColor');
+    color: themed('primary');
+    border-color: themed('primary');
     &:hover {
       color: #ffffff;
-      background: themed('primaryColor');
+      background: themed('primary');
     }
   }
 }
@@ -34,9 +34,9 @@ a {
 /* Progress bar for languages */
 .progress {
   @include themify($themes) {
-    background-color: themed('secondaryLightColor');
+    background-color: themed('secondary-light');
     .progress-bar {
-      background-color: themed('secondaryColor');
+      background-color: themed('secondary');
     }
   }
   height: 0.5rem;
@@ -49,10 +49,10 @@ a {
   }
   @include themify($themes) {
     .star {
-      color: themed('secondaryLightColor');
+      color: themed('secondary-light');
     }
     .filled {
-      color: themed('secondaryColor');
+      color: themed('secondary');
     }
   }
 }
@@ -63,7 +63,7 @@ a {
 }
 .primary-color-text {
   @include themify($themes) {
-    color: themed('primaryColor');
+    color: themed('primary');
   }
 }
 .small-text {
@@ -72,13 +72,13 @@ a {
 
 .border-bottom-green {
   @include themify($themes) {
-    border-bottom: 2px solid themed('primaryColor');
+    border-bottom: 2px solid themed('primary');
   }
 }
 
 .subtitle {
   @include themify($themes) {
-    color: themed('primaryColor');
+    color: themed('primary');
   }
   font-weight: bold;
   margin-bottom: 1.5rem;
@@ -92,7 +92,7 @@ a {
 
 #statusItem {
   @include themify($themes) {
-    background: themed('primaryColor');
+    background: themed('primary');
   }
 }
 
@@ -119,13 +119,13 @@ a {
   @include themify($themes) {
     .btn-primary:not(:disabled):not(.disabled):active,
     .btn-primary:not(:disabled):not(.disabled).active{
-      background: themed('primaryColor');
-      border-color: themed('primaryColor');
+      background: themed('primary');
+      border-color: themed('primary');
       color: #ffffff;
     }
     .btn-primary {
       background-color: #ffffff;
-      border-color: themed('primaryColor');
+      border-color: themed('primary');
       color: #343a40;
     }
   }
